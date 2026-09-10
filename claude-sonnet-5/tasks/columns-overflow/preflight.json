@@ -1,0 +1,9 @@
+{
+  "acceptance_tests": 3,
+  "baseline_failed_tests": [],
+  "baseline_suite_passed_tests": 219,
+  "reference_acceptance_passed": true,
+  "reference_suite_passed": true,
+  "reference_suite_passed_tests": 221,
+  "unchanged_base_acceptance_failed": true
+}

@@ -1,0 +1,11 @@
+{
+  "acceptance_tests": 3,
+  "baseline_failed_tests": [
+    "suite::super_sub::super_sub_test_8"
+  ],
+  "baseline_suite_passed_tests": 1319,
+  "reference_acceptance_passed": true,
+  "reference_suite_passed": true,
+  "reference_suite_passed_tests": 1331,
+  "unchanged_base_acceptance_failed": true
+}

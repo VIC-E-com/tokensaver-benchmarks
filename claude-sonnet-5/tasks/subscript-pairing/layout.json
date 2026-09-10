@@ -1,0 +1,1 @@
+{"package":"pulldown-cmark","member":"pulldown-cmark","writable":["pulldown-cmark/src","pulldown-cmark/specs","pulldown-cmark/tests"],"test_timeout_seconds":300,"agent_timeout_seconds":1800,"max_turns":100,"max_budget_usd":8,"probe_file":"pulldown-cmark/src/lib.rs","expected_baseline_failures":["suite::super_sub::super_sub_test_8"]}

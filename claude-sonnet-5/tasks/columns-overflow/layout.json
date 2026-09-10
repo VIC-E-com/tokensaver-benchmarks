@@ -1,0 +1,1 @@
+{"package":"textwrap","writable":["src","tests","CHANGELOG.md"],"test_timeout_seconds":300,"agent_timeout_seconds":1800,"max_turns":100,"max_budget_usd":8}

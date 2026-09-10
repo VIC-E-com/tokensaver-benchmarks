@@ -1,0 +1,1 @@
+Complete the requested maintenance change. Inspect relevant implementation and tests, preserve existing behavior, add meaningful regression coverage, and run cargo test --offline --locked -j 2. The development dependencies are cached. Do not access the network or unrelated directories. Give a concise final summary of changes and validation.

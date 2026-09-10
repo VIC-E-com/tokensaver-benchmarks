@@ -4,8 +4,11 @@
 
 TokenSaver reduces what a coding agent costs to run without changing the model, the effort level, the prompt or the code the agent produces. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. Every number is a completed, graded task paid for at the provider, with the plain client run side by side under identical conditions.
 
-> **Claude Code + Claude Sonnet 5, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
+> **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
+>
+> **Heavier workspace tasks (cohort Y, 18 trials): mean paired cost 21.8% lower, sums 1.0% lower, 5 of 9 pairs won, 16 of 18 correct.**
+> Large savings on two of three workspaces; none on the largest checkout with release 0.35.0.
 
 ---
 
@@ -18,7 +21,7 @@ Most savings claims count compressed characters or cheaper requests. This benchm
 | Same model, same brain | Claude Sonnet 5 at high effort in both arms; no effort or model downgrade |
 | Same client | Pinned Claude Code 2.1.236, same system prompt, same tools, same guide text |
 | Same caching | Explicit five-minute prompt caching in both arms, verified in every trial |
-| Real tasks, real grading | Three maintenance fixes from public Rust repositories at pinned commits; a trial counts only if the project's own test suite **and** an independent held-out acceptance test pass |
+| Real tasks, real grading | Six maintenance fixes from public Rust repositories at pinned commits (three lean single-crate fixes, three heavier multi-crate workspace fixes); a trial counts only if the project's own test suite **and** an independent held-out acceptance test pass |
 | No cherry-picking | Every scheduled trial is kept; cohorts are preregistered before any model call and never rerun |
 | Paired and counterbalanced | Each task runs as plain / TokenSaver pairs with alternating order, three pairs per task per cohort |
 | Independent accounting | Costs come from the provider's final usage fields, repriced with integer arithmetic at fixed tariffs, and reconciled against TokenSaver's own counters |
@@ -41,6 +44,16 @@ Per task, pooled over the three cohorts: symlink traversal 17.6%, duration carry
 
 Details: [`U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`V-RESULTS.md`](claude-sonnet-5/results/V-RESULTS.md), [`X-RESULTS.md`](claude-sonnet-5/results/X-RESULTS.md).
 
+### Heavier workspace tasks (released 0.35.0)
+
+Cohort Y applies the same design to three real fixes in multi-crate Rust workspaces: pulldown-cmark (inline parser delimiter pairing), rust-url (WHATWG percent-encoding) and textwrap (arithmetic overflow). Trials are five to twenty times more expensive than the lean tasks, take up to 70 requests and 20 minutes, and are graded the same way.
+
+| Cohort | Trials | Correct | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired change | Pairs won |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Y, heavier tasks, released 0.35.0 | 18 | 16 / 18 | $8.3555 | $8.2747 | **1.0%** | **-21.8%** | 5 of 9 |
+
+Per task: textwrap 43.4% lower (2 of 3 pairs), rust-url 26.8% lower (2 of 3), pulldown-cmark 12.5% higher (1 of 3). Requests fell from 338 to 295. The sum is dominated by pulldown-cmark, the largest checkout, where release 0.35.0 made no saving; the mean paired change is the typical effect on a pair regardless of its size. The two figures are reported together because on heavier tasks the per-pair spread is twice that of the lean tasks. One pair failed correctness in both arms. Details and the full deviation record: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md).
+
 Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why only the pooled sum across all cohorts is quoted as the saving.
 
 ---
@@ -50,7 +63,7 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 ```
 claude-sonnet-5/
   results/    per-cohort write-ups with full usage tables
-  evidence/   audited per-cohort evidence (u, v, x)
+  evidence/   audited per-cohort evidence (u, v, x, y)
   tasks/      task prompts, shared guide, acceptance tests, pinned upstream commits
   tools/      audit and inspection scripts (Node, no dependencies)
 ```
@@ -65,7 +78,7 @@ Inside each `evidence/<cohort>/` directory:
 | `schedule.json` | The preregistered trial order |
 | `study-artifacts.sha256`, `confirmation-*.json`, `logs/` | Frozen-input hashes, completion markers and the run log |
 
-`claude-sonnet-5/tasks/` holds the three task prompts, the shared guide, and the independent acceptance test the agent never sees, plus `tasks.json` with the upstream repositories and pinned commits: humantime (duration carry, UTC offset) and glob (symlink traversal).
+`claude-sonnet-5/tasks/` holds the task prompts, the shared guide, and the independent acceptance test the agent never sees, plus `tasks.json` with the upstream repositories and pinned commits: humantime (duration carry, UTC offset) and glob (symlink traversal) for the lean cohorts; pulldown-cmark (subscript pairing), rust-url (path caret encoding) and textwrap (columns overflow) for cohort Y, each with a `layout.json` giving the workspace member, the writable paths and the per-trial limits, and a `preflight.json` recording that the reference fix passes the acceptance test and the unchanged base fails it.
 
 `claude-sonnet-5/tools/`: `audit.mjs` reprices every trial from its original provider events with integer nanodollar arithmetic and checks the reconciliation; `inspect-request-usage.mjs` and `inspect-completed-tools.mjs` produce the per-request and per-tool views; `monitor-study.mjs` reports cohort progress.
 
@@ -79,7 +92,7 @@ Run the same three tasks with a plain Claude Code installation and with TokenSav
 
 ## Limits
 
-Three tasks, one model, one client version, one workload shape: lean Rust maintenance with tailed test output. Savings depend on the workload; heavier tool outputs and long sessions were not measured here. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices. Nothing in this repository is a universal savings figure.
+Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohort disagree on where the saving lands, and on the largest checkout measured the released binary saved nothing. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
 
 ---
 

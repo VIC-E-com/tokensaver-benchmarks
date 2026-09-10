@@ -58,5 +58,71 @@
         "url": "https://codeload.github.com/rust-lang/glob/tar.gz/40547799f118f5510d2b0af3202a0b786c8cafdb"
       }
     }
+  },
+  {
+    "id": "subscript-pairing",
+    "repo": "pulldown-cmark/pulldown-cmark",
+    "base": "8d70dc779d3eb562b4cb710875d2d85cf67c7d26",
+    "reference": "48b08b96c822d25c1da1e05f70ba67746a9043a4",
+    "url": "https://github.com/pulldown-cmark/pulldown-cmark/commit/48b08b96c822d25c1da1e05f70ba67746a9043a4",
+    "upstream_date": "2026-07-27T03:13:05Z",
+    "archives": {
+      "base": {
+        "name": "subscript-pairing-base.tar.gz",
+        "sha256": "f2276b543498163352846e3c8cb2aac76998ce5b9786031519a434756a21f62c",
+        "url": "https://codeload.github.com/pulldown-cmark/pulldown-cmark/tar.gz/8d70dc779d3eb562b4cb710875d2d85cf67c7d26",
+        "bytes": 455157
+      },
+      "reference": {
+        "name": "subscript-pairing-reference.tar.gz",
+        "sha256": "d6f3a33d360617cc38b3c4d09bae11f4e7118c7ca5e223c6f69e27435d001e8c",
+        "url": "https://codeload.github.com/pulldown-cmark/pulldown-cmark/tar.gz/48b08b96c822d25c1da1e05f70ba67746a9043a4",
+        "bytes": 455333
+      }
+    }
+  },
+  {
+    "id": "path-caret-encoding",
+    "repo": "servo/rust-url",
+    "base": "51f71580e2d8a58eb98b53fdb139dfffa13571bf",
+    "reference": "25137be1fc1d35cc8ea7d43fc0a02166b023a483",
+    "url": "https://github.com/servo/rust-url/commit/25137be1fc1d35cc8ea7d43fc0a02166b023a483",
+    "upstream_date": "2026-07-08T07:43:35Z",
+    "archives": {
+      "base": {
+        "name": "path-caret-encoding-base.tar.gz",
+        "sha256": "786e08f34cf75badd9b005ebbf81320da5e6c10c28012d67de9421f15b96b026",
+        "url": "https://codeload.github.com/servo/rust-url/tar.gz/51f71580e2d8a58eb98b53fdb139dfffa13571bf",
+        "bytes": 382960
+      },
+      "reference": {
+        "name": "path-caret-encoding-reference.tar.gz",
+        "sha256": "48e05b719dfd33f114a50d7b8eac8d2729900137cd704fa5cdf4e2cad6a93ef7",
+        "url": "https://codeload.github.com/servo/rust-url/tar.gz/25137be1fc1d35cc8ea7d43fc0a02166b023a483",
+        "bytes": 382934
+      }
+    }
+  },
+  {
+    "id": "columns-overflow",
+    "repo": "mgeisler/textwrap",
+    "base": "59e58a6c9ee925fdf4122cebd7dc06e8069b807f",
+    "reference": "a4f893b596f5314ecc51322ac752b1236e1a54d2",
+    "url": "https://github.com/mgeisler/textwrap/commit/a4f893b596f5314ecc51322ac752b1236e1a54d2",
+    "upstream_date": "2026-09-09T20:59:51Z",
+    "archives": {
+      "base": {
+        "name": "columns-overflow-base.tar.gz",
+        "sha256": "641ab720013c35d9facff6670a45385e98a109ddcc60794b974e698faeb59428",
+        "url": "https://codeload.github.com/mgeisler/textwrap/tar.gz/59e58a6c9ee925fdf4122cebd7dc06e8069b807f",
+        "bytes": 139718
+      },
+      "reference": {
+        "name": "columns-overflow-reference.tar.gz",
+        "sha256": "fd2c4158751677204cb2a2fca543584376dbb33d9b1babdaf6e5a9b8477a7f38",
+        "url": "https://codeload.github.com/mgeisler/textwrap/tar.gz/a4f893b596f5314ecc51322ac752b1236e1a54d2",
+        "bytes": 140092
+      }
+    }
   }
 ]
