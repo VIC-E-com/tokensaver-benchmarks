@@ -7,8 +7,8 @@ TokenSaver reduces what a coding agent costs to run without changing the model, 
 > **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
 >
-> **Heavier workspace tasks (cohort Y, 18 trials): mean paired cost 21.8% lower, sums 1.0% lower, 5 of 9 pairs won, 16 of 18 correct.**
-> Large savings on two of three workspaces; none on the largest checkout with release 0.35.0.
+> **Heavier workspace tasks (cohorts Y and Z, 36 trials, release 0.35.0): mean paired cost 13.4% lower, sums 7.7% higher, 9 of 18 pairs won.**
+> Savings of 20 to 35% on two of three workspaces; a 25% loss on the largest checkout, traced to a defect in the released binary that is corrected in the next release.
 
 ---
 
@@ -48,11 +48,13 @@ Details: [`U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`V-RESULTS.md`
 
 Cohort Y applies the same design to three real fixes in multi-crate Rust workspaces: pulldown-cmark (inline parser delimiter pairing), rust-url (WHATWG percent-encoding) and textwrap (arithmetic overflow). Trials are five to twenty times more expensive than the lean tasks, take up to 70 requests and 20 minutes, and are graded the same way.
 
-| Cohort | Trials | Correct | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired change | Pairs won |
+| Cohort | Trials | Correct (plain / TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired change | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Y, heavier tasks, released 0.35.0 | 18 | 16 / 18 | $8.3555 | $8.2747 | **1.0%** | **-21.8%** | 5 of 9 |
+| Y, heavier tasks, released 0.35.0 | 18 | 8 / 9 and 8 / 9 | $8.3555 | $8.2747 | **1.0%** | **-21.8%** | 5 of 9 |
+| Z, same tasks, repository summary for any size | 18 | 8 / 9 and 9 / 9 | $6.8715 | $8.1251 | **-18.2%** | **-4.1%** | 4 of 9 |
+| **Y + Z** | **36** | **16 / 18 and 17 / 18** | **$15.2270** | **$16.3997** | **-7.7%** | **-13.4%** | **9 of 18** |
 
-Per task: textwrap 43.4% lower (2 of 3 pairs), rust-url 26.8% lower (2 of 3), pulldown-cmark 12.5% higher (1 of 3). Requests fell from 338 to 295. The sum is dominated by pulldown-cmark, the largest checkout, where release 0.35.0 made no saving; the mean paired change is the typical effect on a pair regardless of its size. The two figures are reported together because on heavier tasks the per-pair spread is twice that of the lean tasks. One pair failed correctness in both arms. Details and the full deviation record: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md).
+Per task over both cohorts: textwrap 35% lower, rust-url 20% lower, pulldown-cmark 25% higher (TokenSaver made more requests than the plain arm in all six pulldown-cmark pairs). The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. Investigating the pulldown-cmark loss found that release 0.35.0 shortened the agent's single-file search results before the model saw them, removing matched lines the fixes depended on, on every request of the affected trials; it was reproduced by replay and is corrected in the next release, which will be measured on these same tasks. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md).
 
 Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why only the pooled sum across all cohorts is quoted as the saving.
 
@@ -63,7 +65,7 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 ```
 claude-sonnet-5/
   results/    per-cohort write-ups with full usage tables
-  evidence/   audited per-cohort evidence (u, v, x, y)
+  evidence/   audited per-cohort evidence (u, v, x, y, z)
   tasks/      task prompts, shared guide, acceptance tests, pinned upstream commits
   tools/      audit and inspection scripts (Node, no dependencies)
 ```
@@ -92,7 +94,7 @@ Run the same three tasks with a plain Claude Code installation and with TokenSav
 
 ## Limits
 
-Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohort disagree on where the saving lands, and on the largest checkout measured the released binary saved nothing. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
+Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohorts disagree on where the saving lands, and on the largest checkout measured the released 0.35.0 binary cost more, for a reason that is now identified and fixed but not yet re-measured. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
 
 ---
 

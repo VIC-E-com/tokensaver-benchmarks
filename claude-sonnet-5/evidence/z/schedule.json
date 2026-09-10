@@ -1,0 +1,92 @@
+[
+  {
+    "task": "subscript-pairing",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "subscript-pairing",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "subscript-pairing",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "subscript-pairing",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "subscript-pairing",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "subscript-pairing",
+    "arm": "raw",
+    "pair": 3
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "raw",
+    "pair": 3
+  },
+  {
+    "task": "path-caret-encoding",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "columns-overflow",
+    "arm": "raw",
+    "pair": 3
+  }
+]
