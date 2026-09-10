@@ -22,6 +22,10 @@ Elapsed: 1,023.4 seconds plain versus 1,178.9 TokenSaver. Tool calls: 96 versus 
 
 The $0.2774016 increase decomposes into output +$0.1600900, five-minute writes +$0.0873650 and cache reads +$0.0299550. It is concentrated in three trials: UTC pair 2 (9,699 thinking tokens against 5,344 plain, seven edits against four), UTC pair 3 (9,779 against 6,274, 17 requests against 8) and symlink pair 2 (18,861 against 6,112). In every other pair the two arms were within a few percent or TokenSaver won. The request-count reduction that carried U and V is present in X as well (every TokenSaver trial opened with a direct read; every plain trial opened with directory listing or search); the loss is model reasoning variance landing on the treatment side.
 
+## Release binary check
+
+Requested after the result: the released `vic-e` behaved correctly. All 118 upstream requests in X returned status 200 with zero failed or rate-limited requests; prompt-cache continuity held in every treatment trial (no cache-read drops, no rewritten prefixes); compression activity was the same single Grep-result strategy seen in U; the proxy's WARN lines are the same cache-drift heuristics about the client's own request shape that U produced, in proportion to request count. A stopped partial cohort of the same design with a development build of the same source revision (seven complete pairs, not published because it was cut short) sat at +11.2%; identical code and design landing at +11% and -11% is the per-pair variance, not a binary defect. No fix to the binaries is indicated by these data.
+
 ## Pooled U + V + X, 54 trials
 
 | | Plain USD | TokenSaver USD | Saving | Pairs won |
