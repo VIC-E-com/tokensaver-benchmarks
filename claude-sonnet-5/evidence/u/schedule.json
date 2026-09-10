@@ -1,0 +1,92 @@
+[
+  {
+    "task": "duration-carry",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "duration-carry",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "utc-offset",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "utc-offset",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "vice",
+    "pair": 1
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "raw",
+    "pair": 1
+  },
+  {
+    "task": "duration-carry",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "duration-carry",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "utc-offset",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "utc-offset",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "raw",
+    "pair": 2
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "vice",
+    "pair": 2
+  },
+  {
+    "task": "duration-carry",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "duration-carry",
+    "arm": "raw",
+    "pair": 3
+  },
+  {
+    "task": "utc-offset",
+    "arm": "raw",
+    "pair": 3
+  },
+  {
+    "task": "utc-offset",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "vice",
+    "pair": 3
+  },
+  {
+    "task": "symlink-traversal",
+    "arm": "raw",
+    "pair": 3
+  }
+]

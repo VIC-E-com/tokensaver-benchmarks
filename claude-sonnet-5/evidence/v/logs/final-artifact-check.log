@@ -1,0 +1,12 @@
+tools/benchmark: OK
+protocol.md: OK
+tasks.json: OK
+schedule.json: OK
+run-confirmation.sh: OK
+rule-to-test.md: OK
+candidate-qualification.json: OK
+baseline-provenance.json: OK
+native-r-source-replay.json: OK
+native-s-prompt-replay.json: OK
+hook-contract-probes.json: OK
+local-edit-contract.json: OK

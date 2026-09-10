@@ -1,0 +1,62 @@
+[
+  {
+    "id": "duration-carry",
+    "repo": "tailhook/humantime",
+    "base": "fc092817fa8689298eaac28ff49bd8bede4ff605",
+    "reference": "ed7cc7dcd2566facfce2a1a6af8087993d1887c3",
+    "url": "https://github.com/chronotope/humantime/commit/ed7cc7dcd2566facfce2a1a6af8087993d1887c3",
+    "upstream_date": "2026-07-13T13:43:57Z",
+    "archives": {
+      "base": {
+        "name": "duration-carry-base.tar.gz",
+        "sha256": "18d6bf281ba67827602727cee729fd1af793fb360c4195b420e38ab043464776",
+        "url": "https://codeload.github.com/tailhook/humantime/tar.gz/fc092817fa8689298eaac28ff49bd8bede4ff605"
+      },
+      "reference": {
+        "name": "duration-carry-reference.tar.gz",
+        "sha256": "7c66daf2056da3bcd282cb7befb4c1cd6723de702284d457e8873773c81c9d4c",
+        "url": "https://codeload.github.com/tailhook/humantime/tar.gz/ed7cc7dcd2566facfce2a1a6af8087993d1887c3"
+      }
+    }
+  },
+  {
+    "id": "utc-offset",
+    "repo": "tailhook/humantime",
+    "base": "9383ae2add3c4ebd2c1e0fb6a82b5c3a4408984a",
+    "reference": "1c0937787347607e0d5a70991a9b29328f98aadb",
+    "url": "https://github.com/chronotope/humantime/commit/1c0937787347607e0d5a70991a9b29328f98aadb",
+    "upstream_date": "2025-09-11T08:53:25Z",
+    "archives": {
+      "base": {
+        "name": "utc-offset-base.tar.gz",
+        "sha256": "daabf0af698f7d3169ba1fffe01cb17bd8ada89ce7ae1b740e7c513e69061bf2",
+        "url": "https://codeload.github.com/tailhook/humantime/tar.gz/9383ae2add3c4ebd2c1e0fb6a82b5c3a4408984a"
+      },
+      "reference": {
+        "name": "utc-offset-reference.tar.gz",
+        "sha256": "7bc478d88138bee7515a388d859d7ae4e37020286caa4e55e8bbf6b3db62f88c",
+        "url": "https://codeload.github.com/tailhook/humantime/tar.gz/1c0937787347607e0d5a70991a9b29328f98aadb"
+      }
+    }
+  },
+  {
+    "id": "symlink-traversal",
+    "repo": "rust-lang/glob",
+    "base": "ccac2b3db54c064cdf9fecd4d7db7dda7a9f0dad",
+    "reference": "40547799f118f5510d2b0af3202a0b786c8cafdb",
+    "url": "https://github.com/rust-lang/glob/commit/40547799f118f5510d2b0af3202a0b786c8cafdb",
+    "upstream_date": "2024-01-02T22:01:11Z",
+    "archives": {
+      "base": {
+        "name": "symlink-traversal-base.tar.gz",
+        "sha256": "f896adec0cdfb67f12ab098b28d2ddd8f9a27987fc4611dceb3d4c81f70d8358",
+        "url": "https://codeload.github.com/rust-lang/glob/tar.gz/ccac2b3db54c064cdf9fecd4d7db7dda7a9f0dad"
+      },
+      "reference": {
+        "name": "symlink-traversal-reference.tar.gz",
+        "sha256": "7241a1373a52e7ee0564adaaed17913d04d04bfee9e4d1a7c34e1e004179be16",
+        "url": "https://codeload.github.com/rust-lang/glob/tar.gz/40547799f118f5510d2b0af3202a0b786c8cafdb"
+      }
+    }
+  }
+]

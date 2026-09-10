@@ -1,0 +1,25 @@
+# Build output
+target/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Local roots, logs and temp
+/tmp/
+/temp/
+*.log
+!claude-sonnet-5/evidence/**/logs/*.log
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Never commit credentials or private configuration
+*.credentials.json
+.env
+.env.*
+private-config/

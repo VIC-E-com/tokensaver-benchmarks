@@ -1,0 +1,37 @@
+START | duration-carry | pair1-vice | 2026-09-10T00:09:58Z
+RESULT | duration-carry | pair1-vice | correct=true | $0.203686 | 72.9s | tools=10
+START | duration-carry | pair1-raw | 2026-09-10T00:11:14Z
+RESULT | duration-carry | pair1-raw | correct=true | $0.224723 | 92.9s | tools=12
+START | utc-offset | pair1-raw | 2026-09-10T00:12:48Z
+RESULT | utc-offset | pair1-raw | correct=true | $0.290143 | 131.7s | tools=11
+START | utc-offset | pair1-vice | 2026-09-10T00:14:58Z
+RESULT | utc-offset | pair1-vice | correct=true | $0.280659 | 117.6s | tools=12
+START | symlink-traversal | pair1-vice | 2026-09-10T00:16:58Z
+RESULT | symlink-traversal | pair1-vice | correct=true | $0.481626 | 147.3s | tools=21
+START | symlink-traversal | pair1-raw | 2026-09-10T00:19:17Z
+RESULT | symlink-traversal | pair1-raw | correct=true | $0.704657 | 302.5s | tools=24
+START | duration-carry | pair2-raw | 2026-09-10T00:24:11Z
+RESULT | duration-carry | pair2-raw | correct=true | $0.155192 | 48.3s | tools=9
+START | duration-carry | pair2-vice | 2026-09-10T00:25:02Z
+RESULT | duration-carry | pair2-vice | correct=true | $0.160002 | 53.5s | tools=7
+START | utc-offset | pair2-vice | 2026-09-10T00:25:59Z
+RESULT | utc-offset | pair2-vice | correct=true | $0.229654 | 102.0s | tools=7
+START | utc-offset | pair2-raw | 2026-09-10T00:27:42Z
+RESULT | utc-offset | pair2-raw | correct=true | $0.222450 | 94.3s | tools=9
+START | symlink-traversal | pair2-raw | 2026-09-10T00:29:17Z
+RESULT | symlink-traversal | pair2-raw | correct=true | $0.666144 | 263.5s | tools=23
+START | symlink-traversal | pair2-vice | 2026-09-10T00:33:29Z
+RESULT | symlink-traversal | pair2-vice | correct=true | $0.444010 | 174.0s | tools=14
+START | duration-carry | pair3-vice | 2026-09-10T00:36:16Z
+RESULT | duration-carry | pair3-vice | correct=true | $0.144462 | 54.6s | tools=4
+START | duration-carry | pair3-raw | 2026-09-10T00:37:16Z
+RESULT | duration-carry | pair3-raw | correct=true | $0.150779 | 59.7s | tools=7
+START | utc-offset | pair3-raw | 2026-09-10T00:38:17Z
+RESULT | utc-offset | pair3-raw | correct=true | $0.243557 | 106.3s | tools=9
+START | utc-offset | pair3-vice | 2026-09-10T00:40:04Z
+RESULT | utc-offset | pair3-vice | correct=true | $0.351638 | 188.6s | tools=8
+START | symlink-traversal | pair3-vice | 2026-09-10T00:43:09Z
+RESULT | symlink-traversal | pair3-vice | correct=true | $0.397514 | 100.2s | tools=17
+START | symlink-traversal | pair3-raw | 2026-09-10T00:44:47Z
+RESULT | symlink-traversal | pair3-raw | correct=true | $0.438646 | 188.4s | tools=13
+COHORT V COMPLETE | all 18 trials retained

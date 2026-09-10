@@ -1,0 +1,6 @@
+{
+  "acceptance_tests": 2,
+  "baseline_suite_passed_tests": 43,
+  "reference_acceptance_passed": true,
+  "unchanged_base_acceptance_failed": true
+}
