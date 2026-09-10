@@ -4,8 +4,8 @@
 
 TokenSaver reduces what a coding agent costs to run without changing the model, the effort level, the prompt or the code the agent produces. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. Every number is a completed, graded task paid for at the provider, with the plain client run side by side under identical conditions.
 
-> **Claude Code + Claude Sonnet 5, 36 matched trials: 17.2% lower cost, 21% less wall time, every trial correct.**
-> Pilot cohort 21.5% (9 of 9 pairs won), unchanged confirmation cohort 13.0% (6 of 9), pooled 15 of 18 pairs.
+> **Claude Code + Claude Sonnet 5, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
+> Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
 
 ---
 
@@ -22,7 +22,7 @@ Most savings claims count compressed characters or cheaper requests. This benchm
 | No cherry-picking | Every scheduled trial is kept; cohorts are preregistered before any model call and never rerun |
 | Paired and counterbalanced | Each task runs as plain / TokenSaver pairs with alternating order, three pairs per task per cohort |
 | Independent accounting | Costs come from the provider's final usage fields, repriced with integer arithmetic at fixed tariffs, and reconciled against TokenSaver's own counters |
-| Confirmation before claims | A favorable pilot was repeated unchanged before being reported |
+| Confirmation before claims | A favorable pilot was repeated unchanged, then measured again with the released binary, before being reported |
 
 Fixed study tariffs, USD per million tokens: ordinary input 2, cache read 0.2, five-minute cache write 2.5, one-hour cache write 4, output including thinking 10. They make cohorts comparable; they are not invoices.
 
@@ -32,17 +32,16 @@ Fixed study tariffs, USD per million tokens: ordinary input 2, cache read 0.2, f
 
 | Cohort | Trials | Correct | Plain Claude Code | With TokenSaver | Saving | Pairs won | Wall time |
 |---|---:|---:|---:|---:|---:|---|---:|
-| U, pilot | 18 | 18 / 18 | $2.9366 | $2.3043 | **21.5%** | 9 of 9 | -21% |
-| V, unchanged confirmation | 18 | 18 / 18 | $3.0963 | $2.6933 | **13.0%** | 6 of 9 | -21% |
-| **U + V pooled** | **36** | **36 / 36** | **$6.0329** | **$4.9976** | **17.2%** | **15 of 18** | |
+| U, pilot (development build) | 18 | 18 / 18 | $2.9366 | $2.3043 | **21.5%** | 9 of 9 | -21% |
+| V, unchanged confirmation (development build) | 18 | 18 / 18 | $3.0963 | $2.6933 | **13.0%** | 6 of 9 | -21% |
+| X, released 0.35.0 binary | 18 | 18 / 18 | $2.5605 | $2.8379 | **-10.8%** | 5 of 9 | +15% |
+| **U + V + X pooled** | **54** | **54 / 54** | **$8.5934** | **$7.8355** | **8.8%** | **20 of 27** | |
 
-Per task, pooled over both cohorts: symlink traversal 25%, duration carry 12%, UTC offset 5%. Tool calls fell from 127 to 77 (U) and from 117 to 100 (V). Input tokens fell 37% (U) and 13% (V); output tokens including thinking fell 19% and 22%.
+Per task, pooled over the three cohorts: symlink traversal 17.6%, duration carry 7.4%, UTC offset -7.1%. In U and V tool calls fell from 127 to 77 and from 117 to 100; in X they were level (96 to 93) while three treatment trials spent roughly twice the reasoning tokens of their counterparts.
 
-Details: [`claude-sonnet-5/results/U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`claude-sonnet-5/results/V-RESULTS.md`](claude-sonnet-5/results/V-RESULTS.md).
+Details: [`U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`V-RESULTS.md`](claude-sonnet-5/results/V-RESULTS.md), [`X-RESULTS.md`](claude-sonnet-5/results/X-RESULTS.md).
 
-Between identical runs, the cost of a single pair varies by about 25%. That is why every cohort has three pairs per task, why a pilot is confirmed unchanged, and why only pooled sums are reported as results.
-
-A further cohort with the current release binaries is added to this repository as soon as it completes and is audited.
+Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why only the pooled sum across all cohorts is quoted as the saving.
 
 ---
 
@@ -51,7 +50,7 @@ A further cohort with the current release binaries is added to this repository a
 ```
 claude-sonnet-5/
   results/    per-cohort write-ups with full usage tables
-  evidence/   audited per-cohort evidence (u, v)
+  evidence/   audited per-cohort evidence (u, v, x)
   tasks/      task prompts, shared guide, acceptance tests, pinned upstream commits
   tools/      audit and inspection scripts (Node, no dependencies)
 ```
