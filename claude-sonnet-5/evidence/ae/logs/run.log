@@ -1,0 +1,36 @@
+START | subscript-pairing | pair1-vice | 2026-09-11T17:42:30Z
+RESULT | subscript-pairing | pair1-vice | correct=true | $1.097544 | 492.7s | tools=46
+START | subscript-pairing | pair1-raw | 2026-09-11T17:50:15Z
+RESULT | subscript-pairing | pair1-raw | correct=true | $1.112938 | 534.1s | tools=43
+START | path-caret-encoding | pair1-raw | 2026-09-11T17:58:43Z
+RESULT | path-caret-encoding | pair1-raw | correct=true | $0.375281 | 150.1s | tools=29
+START | path-caret-encoding | pair1-vice | 2026-09-11T18:01:19Z
+RESULT | path-caret-encoding | pair1-vice | correct=true | $0.296848 | 114.4s | tools=18
+START | columns-overflow | pair1-vice | 2026-09-11T18:03:26Z
+RESULT | columns-overflow | pair1-vice | correct=true | $0.284610 | 184.0s | tools=13
+START | columns-overflow | pair1-raw | 2026-09-11T18:06:39Z
+RESULT | columns-overflow | pair1-raw | correct=true | $0.568222 | 293.5s | tools=28
+START | subscript-pairing | pair2-raw | 2026-09-11T18:11:35Z
+RESULT | subscript-pairing | pair2-raw | correct=true | $2.466688 | 1119.9s | tools=71
+START | subscript-pairing | pair2-vice | 2026-09-11T18:28:58Z
+RESULT | subscript-pairing | pair2-vice | correct=true | $1.571126 | 683.7s | tools=50
+START | path-caret-encoding | pair2-vice | 2026-09-11T18:39:43Z
+RESULT | path-caret-encoding | pair2-vice | correct=true | $0.397323 | 157.3s | tools=25
+START | path-caret-encoding | pair2-raw | 2026-09-11T18:42:29Z
+RESULT | path-caret-encoding | pair2-raw | correct=true | $0.398403 | 149.6s | tools=24
+START | columns-overflow | pair2-raw | 2026-09-11T18:45:10Z
+RESULT | columns-overflow | pair2-raw | correct=true | $0.352273 | 435.2s | tools=23
+START | columns-overflow | pair2-vice | 2026-09-11T18:52:17Z
+RESULT | columns-overflow | pair2-vice | correct=true | $0.329116 | 165.5s | tools=16
+START | subscript-pairing | pair3-vice | 2026-09-11T18:55:14Z
+RESULT | subscript-pairing | pair3-vice | correct=true | $1.491710 | 689.7s | tools=53
+START | subscript-pairing | pair3-raw | 2026-09-11T19:06:01Z
+RESULT | subscript-pairing | pair3-raw | correct=true | $2.262818 | 1071.0s | tools=58
+START | path-caret-encoding | pair3-raw | 2026-09-11T19:22:42Z
+RESULT | path-caret-encoding | pair3-raw | correct=true | $0.526385 | 200.2s | tools=35
+START | path-caret-encoding | pair3-vice | 2026-09-11T19:26:07Z
+RESULT | path-caret-encoding | pair3-vice | correct=true | $0.291182 | 113.1s | tools=21
+START | columns-overflow | pair3-vice | 2026-09-11T19:28:12Z
+RESULT | columns-overflow | pair3-vice | correct=true | $0.498045 | 282.1s | tools=22
+START | columns-overflow | pair3-raw | 2026-09-11T19:33:00Z
+RESULT | columns-overflow | pair3-raw | correct=true | $0.464622 | 244.6s | tools=20
