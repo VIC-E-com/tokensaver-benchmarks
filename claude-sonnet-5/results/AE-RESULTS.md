@@ -42,6 +42,6 @@ This cohort answers the question the previous four left open. Y, Z and AA ran th
 | Cohorts with the shipped small summary (Y, Z, AA, AE), 36 pairs | 31.6937 | 31.4688 | 0.7% | -13.3% | 21 of 36 |
 | All six, 54 pairs | 47.8136 | 50.7977 | -6.2% | -6.4% | 26 of 54 |
 
-Per task over all six cohorts (18 pairs each): textwrap 19.8% lower (11 of 18), rust-url 11.3% lower (10 of 18), pulldown-cmark 15.2% higher (5 of 18, three of them AE's). All 54 TokenSaver trials correct; 53 of 54 plain trials correct. AE is one nine-pair cohort (SE 0.09 in log-ratio) and is quoted with the pooled figures beside it; a confirmation run of the same configuration is the next cohort.
+Per task over all six cohorts (18 pairs each): textwrap 19.8% lower (11 of 18), rust-url 11.3% lower (10 of 18), pulldown-cmark 15.2% higher (5 of 18, three of them AE's). 53 of 54 TokenSaver trials and 52 of 54 plain trials correct. AE is one nine-pair cohort (SE 0.09 in log-ratio) and is quoted with the pooled figures beside it; a confirmation run of the same configuration is the next cohort.
 
 Per-trial detail: `../evidence/ae/independent-audit.json`.

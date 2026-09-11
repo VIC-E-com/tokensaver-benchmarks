@@ -7,8 +7,8 @@ TokenSaver reduces what a coding agent costs to run without changing the model, 
 > **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
 >
-> **Heavier workspace tasks, shipping configuration (cohort AE, 18 trials): 26.6% lower cost, mean paired 23.4% lower, 8 of 9 pairs won, every trial correct, every task won.** Across all six heavier cohorts (108 trials, including two retired candidates and the defective 0.35.0 build): mean paired cost 6.4% lower, sums 6.2% higher, 26 of 54 pairs.
-> Savings of 20 to 35% on two of three workspaces; a 25% loss on the largest checkout, traced to a defect in the released binary that is corrected in the next release.
+> **Heavier workspace tasks, shipping configuration (cohort AE, 18 trials): 26.6% lower cost, mean paired 23.4% lower, 8 of 9 pairs won, every trial correct, every task won.** Across all six heavier cohorts (108 trials, including two retired candidates and the defective 0.35.0 build): mean paired cost 6.4% lower, sums 6.2% higher, 26 of 54 pairs, 53 of 54 TokenSaver trials correct.
+> The two medium workspaces saved 20 to 35% in every cohort; the largest checkout lost in five cohorts until the shipping configuration, which wins it in all three pairs. Read the cohort table for how that configuration was reached.
 
 ---
 
@@ -48,16 +48,18 @@ Details: [`U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`V-RESULTS.md`
 
 Cohort Y applies the same design to three real fixes in multi-crate Rust workspaces: pulldown-cmark (inline parser delimiter pairing), rust-url (WHATWG percent-encoding) and textwrap (arithmetic overflow). Trials are five to twenty times more expensive than the lean tasks, take up to 70 requests and 20 minutes, and are graded the same way.
 
-| Cohort | Trials | Correct (plain / TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired change | Pairs won |
+| Cohort | Trials | Correct (plain, TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired saving | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Y, heavier tasks, released 0.35.0 | 18 | 8 / 9 and 8 / 9 | $8.3555 | $8.2747 | **1.0%** | **-21.8%** | 5 of 9 |
-| Z, same tasks, repository summary for any size | 18 | 8 / 9 and 9 / 9 | $6.8715 | $8.1251 | **-18.2%** | **-4.1%** | 4 of 9 |
-| AA, same tasks, corrected build (search results untouched) | 18 | 9 / 9 and 9 / 9 | $7.9391 | $8.8115 | **-11.0%** | **-1.7%** | 4 of 9 |
-| AC, same tasks, corrected build, experimental larger repository summary (retired by its pre-registered rule) | 18 | 9 / 9 and 9 / 9 | $7.6593 | $9.7077 | **-26.7%** | **+5.8%** | 3 of 9 |
-| AD, as AC with command-output shortening off | 18 | 9 / 9 and 9 / 9 | $8.4605 | $9.6213 | **-13.7%** | **+12.3%** | 2 of 9 |
-| **AE, shipping configuration (small summary, command-output shortening off, corrected build)** | 18 | 9 / 9 and 9 / 9 | $8.5276 | $6.2575 | **26.6%** | **-23.4%** | **8 of 9** |
-| Y + Z + AA + AE (the shipped small summary) | 72 | 34 / 36 and 36 / 36 | $31.6937 | $31.4688 | 0.7% | -13.3% | 21 of 36 |
-| **All six** | **108** | **52 / 54 and 54 / 54** | **$47.8136** | **$50.7977** | **-6.2%** | **-6.4%** | **26 of 54** |
+| Y, heavier tasks, released 0.35.0 | 18 | 8/9, 8/9 | $8.3555 | $8.2747 | **1.0%** | **21.8%** | 5 of 9 |
+| Z, same tasks, repository summary for any size | 18 | 8/9, 9/9 | $6.8715 | $8.1251 | **-18.2%** | **4.1%** | 4 of 9 |
+| AA, same tasks, corrected build (search results untouched) | 18 | 9/9, 9/9 | $7.9391 | $8.8115 | **-11.0%** | **1.7%** | 4 of 9 |
+| AC, same tasks, corrected build, experimental larger repository summary (retired by its pre-registered rule) | 18 | 9/9, 9/9 | $7.6593 | $9.7077 | **-26.7%** | **-5.8%** | 3 of 9 |
+| AD, as AC with command-output shortening off | 18 | 9/9, 9/9 | $8.4605 | $9.6213 | **-13.7%** | **-12.3%** | 2 of 9 |
+| **AE, shipping configuration (small summary, command-output shortening off, corrected build)** | 18 | 9/9, 9/9 | $8.5276 | $6.2575 | **26.6%** | **23.4%** | **8 of 9** |
+| Y + Z + AA + AE (the shipped small summary) | 72 | 34/36, 35/36 | $31.6937 | $31.4688 | 0.7% | 13.3% | 21 of 36 |
+| **All six (including two retired candidates and the defective 0.35.0 build)** | **108** | **52/54, 53/54** | **$47.8136** | **$50.7977** | **-6.2%** | **6.4%** | **26 of 54** |
+
+Both percentage columns are positive when TokenSaver is cheaper. "Saving (sums)" compares cohort totals; "Mean paired saving" is the typical effect on one pair (the mean of per-pair log cost ratios, sign flipped), which is why a cohort dominated by one expensive task can show the two with opposite signs. The per-cohort result pages report the same quantity as a signed change (negative when TokenSaver is cheaper).
 
 Per task over all six cohorts (eighteen pairs each): textwrap 20% lower, rust-url 11% lower, pulldown-cmark 15% higher; in the shipping configuration alone (AE) every task is lower: textwrap 20%, rust-url 24%, pulldown-cmark 26%. The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. How the configuration was reached: after Z, release 0.35.0 was found to shorten single-file search results before the model saw them (reproduced by replay, corrected); AA showed the correction was necessary but not sufficient; AC tried a larger repository summary and retired it; AD removed command-output shortening and brought pulldown-cmark level; AE keeps only the small summary and the corrected build and wins every task, with TokenSaver trials making 20% fewer requests and producing 30% fewer output tokens than plain. AE is one nine-pair cohort and is quoted with the pooled rows beside it; a confirmation run of the same configuration follows. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md), [`AA-RESULTS.md`](claude-sonnet-5/results/AA-RESULTS.md), [`AC-RESULTS.md`](claude-sonnet-5/results/AC-RESULTS.md), [`AD-RESULTS.md`](claude-sonnet-5/results/AD-RESULTS.md), [`AE-RESULTS.md`](claude-sonnet-5/results/AE-RESULTS.md).
 

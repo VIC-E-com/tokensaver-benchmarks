@@ -42,6 +42,6 @@ On pulldown-cmark, switching the command-output shortening off took the task fro
 | AD, as AC with command-output shortening off | 8.4605076 | 9.6212914 | -13.72% | +12.3% | 2 of 9 |
 | **Y + Z + AA + AC + AD** | **39.2858826** | **44.5401672** | **-13.4%** | **-2.6%** | **18 of 45** |
 
-Pooled mean paired log-ratio -0.026 (SD 0.42, SE 0.06 over 45 pairs). Per task over 15 pairs each: textwrap 19.7% lower (9 of 15), rust-url 8.5% lower (7 of 15), pulldown-cmark 25.7% higher (2 of 15). All 45 TokenSaver trials correct; 44 of 45 plain trials correct.
+Pooled mean paired log-ratio -0.026 (SD 0.42, SE 0.06 over 45 pairs). Per task over 15 pairs each: textwrap 19.7% lower (9 of 15), rust-url 8.5% lower (7 of 15), pulldown-cmark 25.7% higher (2 of 15). 44 of 45 TokenSaver trials and 43 of 45 plain trials correct.
 
 Per-trial detail: `../evidence/ad/independent-audit.json`.

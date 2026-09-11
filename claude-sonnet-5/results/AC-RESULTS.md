@@ -47,6 +47,6 @@ A delivery detail matters for reading the two workspaces: Claude Code 2.1.236 do
 | AC, corrected build, experimental larger summary (retired) | 7.6592548 | 9.7076838 | -26.74% | +5.8% | 3 of 9 |
 | **Y + Z + AA + AC** | **30.8253750** | **34.9188758** | **-13.3%** | **-6.0%** | **16 of 36** |
 
-Pooled mean paired log-ratio -0.062 (SD 0.44, SE 0.07 over 36 pairs). Per task over 12 pairs each: textwrap 23.2% lower (7 of 12), rust-url 15.3% lower (7 of 12), pulldown-cmark 27.6% higher (2 of 12; TokenSaver trials produce 30% more output tokens on that task at equal tool counts). All 36 TokenSaver trials correct; 35 of 36 plain trials correct.
+Pooled mean paired log-ratio -0.062 (SD 0.44, SE 0.07 over 36 pairs). Per task over 12 pairs each: textwrap 23.2% lower (7 of 12), rust-url 15.3% lower (7 of 12), pulldown-cmark 27.6% higher (2 of 12; TokenSaver trials produce 30% more output tokens on that task at equal tool counts). 35 of 36 TokenSaver trials and 34 of 36 plain trials correct (the two misses are cohort Y's pulldown-cmark pair 3, wrong in both arms, and cohort Z's plain pair 3).
 
 Per-trial detail: `../evidence/ac/independent-audit.json`.
