@@ -7,7 +7,7 @@ TokenSaver reduces what a coding agent costs to run without changing the model, 
 > **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
 >
-> **Heavier workspace tasks, shipping configuration (cohort AE, 18 trials): 26.6% lower cost, mean paired 23.4% lower, 8 of 9 pairs won, every trial correct, every task won.** Across all six heavier cohorts (108 trials, including two retired candidates and the defective 0.35.0 build): mean paired cost 6.4% lower, sums 6.2% higher, 26 of 54 pairs, 53 of 54 TokenSaver trials correct.
+> **Heavier workspace tasks, shipping configuration (cohorts AE and AF, 36 trials): 13.9% lower cost, mean paired 18.7% lower, median pair 21% lower, 15 of 18 pairs won, every trial correct.** Across all six heavier cohorts (108 trials, including two retired candidates and the defective 0.35.0 build): mean paired cost 6.4% lower, sums 6.2% higher, 26 of 54 pairs, 53 of 54 TokenSaver trials correct.
 > The two medium workspaces saved 20 to 35% in every cohort; the largest checkout lost in five cohorts until the shipping configuration, which wins it in all three pairs. Read the cohort table for how that configuration was reached.
 
 ---
@@ -52,9 +52,9 @@ Cohort Y applies the same design to three real fixes in multi-crate Rust workspa
 
 | Cohort | Trials | Correct (plain, TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired saving | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|---|
-| **AE** | 18 | 9/9, 9/9 | $8.5276 | $6.2575 | **26.6%** | **23.4%** | **8 of 9** |
-| AF, identical confirmation | running | | | | | | |
-| **Shipping configuration, pooled** | **18** | **9/9, 9/9** | **$8.5276** | **$6.2575** | **26.6%** | **23.4%** | **8 of 9** |
+| AE | 18 | 9/9, 9/9 | $8.5276 | $6.2575 | 26.6% | 23.4% | 8 of 9 |
+| AF, identical confirmation | 18 | 9/9, 9/9 | $8.2326 | $8.1719 | 0.7% | 13.8% | 7 of 9 |
+| **Shipping configuration, pooled** | **36** | **18/18, 18/18** | **$16.7602** | **$14.4294** | **13.9%** | **18.7%** | **15 of 18** |
 
 **How the configuration was found.** Five earlier cohorts on the same tasks measured configurations that are no longer shipped: the released 0.35.0 build (which shortened the agent's search results before the model saw them), the corrected build still combined with command-output shortening, and an enlarged repository summary. Each lost on the largest checkout and each is published in full; their sums are the cost of the search, not a property of the product.
 
@@ -68,9 +68,9 @@ Cohort Y applies the same design to three real fixes in multi-crate Rust workspa
 | Superseded configurations, pooled | 90 | 43/45, 44/45 | $39.2859 | $44.5402 | -13.4% | 2.6% | 18 of 45 |
 | All heavier cohorts including the shipping configuration | 108 | 52/54, 53/54 | $47.8136 | $50.7977 | -6.2% | 6.4% | 26 of 54 |
 
-Both percentage columns are positive when TokenSaver is cheaper. "Saving (sums)" compares cohort totals; "Mean paired saving" is the typical effect on one pair (the mean of per-pair log cost ratios, sign flipped), which is why a cohort dominated by one expensive task can show the two with opposite signs. The per-cohort result pages report the same quantity as a signed change (negative when TokenSaver is cheaper).
+AF repeats AE in seven of nine pairs; its sum is flat because one pulldown-cmark pair lost 38% on a single long reasoning episode (fewer tool calls than plain, far more output), the same shape as every remaining loss in this configuration. The median pair over the 18 shipping-configuration pairs is 21% lower. Both percentage columns are positive when TokenSaver is cheaper. "Saving (sums)" compares cohort totals; "Mean paired saving" is the typical effect on one pair (the mean of per-pair log cost ratios, sign flipped), which is why a cohort dominated by one expensive task can show the two with opposite signs. The per-cohort result pages report the same quantity as a signed change (negative when TokenSaver is cheaper).
 
-Per task in the shipping configuration: textwrap 20% lower, rust-url 24% lower, pulldown-cmark 26% lower. Per task over all six cohorts (eighteen pairs each): textwrap 20% lower, rust-url 11% lower, pulldown-cmark 15% higher. The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. How the configuration was reached: after Z, release 0.35.0 was found to shorten single-file search results before the model saw them (reproduced by replay, corrected); AA showed the correction was necessary but not sufficient; AC tried a larger repository summary and retired it; AD removed command-output shortening and brought pulldown-cmark level; AE keeps only the small summary and the corrected build and wins every task, with TokenSaver trials making 20% fewer requests and producing 30% fewer output tokens than plain. AE is one nine-pair cohort; identical confirmation cohorts are being added to its pooled row, and every one of them will be published whatever it shows. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md), [`AA-RESULTS.md`](claude-sonnet-5/results/AA-RESULTS.md), [`AC-RESULTS.md`](claude-sonnet-5/results/AC-RESULTS.md), [`AD-RESULTS.md`](claude-sonnet-5/results/AD-RESULTS.md), [`AE-RESULTS.md`](claude-sonnet-5/results/AE-RESULTS.md).
+Per task in the shipping configuration: textwrap 20% lower, rust-url 24% lower, pulldown-cmark 26% lower. Per task over all six cohorts (eighteen pairs each): textwrap 20% lower, rust-url 11% lower, pulldown-cmark 15% higher. The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. How the configuration was reached: after Z, release 0.35.0 was found to shorten single-file search results before the model saw them (reproduced by replay, corrected); AA showed the correction was necessary but not sufficient; AC tried a larger repository summary and retired it; AD removed command-output shortening and brought pulldown-cmark level; AE keeps only the small summary and the corrected build and wins every task, with TokenSaver trials making 20% fewer requests and producing 30% fewer output tokens than plain. AE and AF are two nine-pair cohorts of the same configuration; a third is queued, and every one is published whatever it shows. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md), [`AA-RESULTS.md`](claude-sonnet-5/results/AA-RESULTS.md), [`AC-RESULTS.md`](claude-sonnet-5/results/AC-RESULTS.md), [`AD-RESULTS.md`](claude-sonnet-5/results/AD-RESULTS.md), [`AE-RESULTS.md`](claude-sonnet-5/results/AE-RESULTS.md), [`AF-RESULTS.md`](claude-sonnet-5/results/AF-RESULTS.md).
 
 Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why the saving quoted for a configuration is its pooled sum across all cohorts that ran it.
 
@@ -81,7 +81,7 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 ```
 claude-sonnet-5/
   results/    per-cohort write-ups with full usage tables
-  evidence/   audited per-cohort evidence (u, v, x, y, z, aa, ac, ad, ae)
+  evidence/   audited per-cohort evidence (u, v, x, y, z, aa, ac, ad, ae, af)
   tasks/      task prompts, shared guide, acceptance tests, pinned upstream commits
   tools/      audit and inspection scripts (Node, no dependencies)
 ```
@@ -110,7 +110,7 @@ Run the same three tasks with a plain Claude Code installation and with TokenSav
 
 ## Limits
 
-Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohorts disagree on where the saving lands, and on the largest checkout measured TokenSaver cost more in five cohorts before the shipping configuration was reached in the sixth, which won that task in all three pairs; that configuration has one nine-pair cohort behind it so far. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
+Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohorts disagree on where the saving lands, and on the largest checkout measured TokenSaver cost more in five cohorts before the shipping configuration was reached in the sixth, which won that task in all three pairs; that configuration has two nine-pair cohorts behind it so far. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
 
 ---
 

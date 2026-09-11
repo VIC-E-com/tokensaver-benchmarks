@@ -1,0 +1,36 @@
+START | subscript-pairing | pair1-vice | 2026-09-11T19:43:26Z
+RESULT | subscript-pairing | pair1-vice | correct=true | $2.088918 | 963.7s | tools=67
+START | subscript-pairing | pair1-raw | 2026-09-11T19:59:42Z
+RESULT | subscript-pairing | pair1-raw | correct=true | $2.118690 | 808.1s | tools=67
+START | path-caret-encoding | pair1-raw | 2026-09-11T20:13:22Z
+RESULT | path-caret-encoding | pair1-raw | correct=true | $0.359329 | 132.8s | tools=26
+START | path-caret-encoding | pair1-vice | 2026-09-11T20:15:55Z
+RESULT | path-caret-encoding | pair1-vice | correct=true | $0.278841 | 104.8s | tools=20
+START | columns-overflow | pair1-vice | 2026-09-11T20:18:00Z
+TRIAL_INCOMPLETE | columns-overflow | pair1-vice | 2026-09-11T20:18:02Z
+START | columns-overflow | pair1-raw | 2026-09-11T20:18:02Z
+TRIAL_INCOMPLETE | columns-overflow | pair1-raw | 2026-09-11T20:18:03Z
+START | subscript-pairing | pair2-raw | 2026-09-11T20:18:03Z
+TRIAL_INCOMPLETE | subscript-pairing | pair2-raw | 2026-09-11T20:18:04Z
+START | subscript-pairing | pair2-vice | 2026-09-11T20:18:04Z
+TRIAL_INCOMPLETE | subscript-pairing | pair2-vice | 2026-09-11T20:18:05Z
+START | path-caret-encoding | pair2-vice | 2026-09-11T20:18:05Z
+TRIAL_INCOMPLETE | path-caret-encoding | pair2-vice | 2026-09-11T20:18:06Z
+START | path-caret-encoding | pair2-raw | 2026-09-11T20:18:06Z
+TRIAL_INCOMPLETE | path-caret-encoding | pair2-raw | 2026-09-11T20:18:07Z
+START | columns-overflow | pair2-raw | 2026-09-11T20:18:07Z
+TRIAL_INCOMPLETE | columns-overflow | pair2-raw | 2026-09-11T20:18:08Z
+START | columns-overflow | pair2-vice | 2026-09-11T20:18:08Z
+TRIAL_INCOMPLETE | columns-overflow | pair2-vice | 2026-09-11T20:18:09Z
+START | subscript-pairing | pair3-vice | 2026-09-11T20:18:09Z
+TRIAL_INCOMPLETE | subscript-pairing | pair3-vice | 2026-09-11T20:18:10Z
+START | subscript-pairing | pair3-raw | 2026-09-11T20:18:11Z
+TRIAL_INCOMPLETE | subscript-pairing | pair3-raw | 2026-09-11T20:18:12Z
+START | path-caret-encoding | pair3-raw | 2026-09-11T20:18:12Z
+TRIAL_INCOMPLETE | path-caret-encoding | pair3-raw | 2026-09-11T20:18:13Z
+START | path-caret-encoding | pair3-vice | 2026-09-11T20:18:13Z
+TRIAL_INCOMPLETE | path-caret-encoding | pair3-vice | 2026-09-11T20:18:14Z
+START | columns-overflow | pair3-vice | 2026-09-11T20:18:14Z
+TRIAL_INCOMPLETE | columns-overflow | pair3-vice | 2026-09-11T20:18:15Z
+START | columns-overflow | pair3-raw | 2026-09-11T20:18:15Z
+TRIAL_INCOMPLETE | columns-overflow | pair3-raw | 2026-09-11T20:18:16Z
