@@ -44,26 +44,35 @@ Per task, pooled over the three cohorts: symlink traversal 17.6%, duration carry
 
 Details: [`U-RESULTS.md`](claude-sonnet-5/results/U-RESULTS.md), [`V-RESULTS.md`](claude-sonnet-5/results/V-RESULTS.md), [`X-RESULTS.md`](claude-sonnet-5/results/X-RESULTS.md).
 
-### Heavier workspace tasks (released 0.35.0)
+### Heavier workspace tasks
 
 Cohort Y applies the same design to three real fixes in multi-crate Rust workspaces: pulldown-cmark (inline parser delimiter pairing), rust-url (WHATWG percent-encoding) and textwrap (arithmetic overflow). Trials are five to twenty times more expensive than the lean tasks, take up to 70 requests and 20 minutes, and are graded the same way.
 
+**Shipping configuration** (small repository summary before the first prompt, command-output shortening off, corrected build). This is what TokenSaver installs for Claude Code; every cohort of it is listed here and the pooled row is the heavier-task saving to quote.
+
 | Cohort | Trials | Correct (plain, TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired saving | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Y, heavier tasks, released 0.35.0 | 18 | 8/9, 8/9 | $8.3555 | $8.2747 | **1.0%** | **21.8%** | 5 of 9 |
-| Z, same tasks, repository summary for any size | 18 | 8/9, 9/9 | $6.8715 | $8.1251 | **-18.2%** | **4.1%** | 4 of 9 |
-| AA, same tasks, corrected build (search results untouched) | 18 | 9/9, 9/9 | $7.9391 | $8.8115 | **-11.0%** | **1.7%** | 4 of 9 |
-| AC, same tasks, corrected build, experimental larger repository summary (retired by its pre-registered rule) | 18 | 9/9, 9/9 | $7.6593 | $9.7077 | **-26.7%** | **-5.8%** | 3 of 9 |
-| AD, as AC with command-output shortening off | 18 | 9/9, 9/9 | $8.4605 | $9.6213 | **-13.7%** | **-12.3%** | 2 of 9 |
-| **AE, shipping configuration (small summary, command-output shortening off, corrected build)** | 18 | 9/9, 9/9 | $8.5276 | $6.2575 | **26.6%** | **23.4%** | **8 of 9** |
-| Y + Z + AA + AE (the shipped small summary) | 72 | 34/36, 35/36 | $31.6937 | $31.4688 | 0.7% | 13.3% | 21 of 36 |
-| **All six (including two retired candidates and the defective 0.35.0 build)** | **108** | **52/54, 53/54** | **$47.8136** | **$50.7977** | **-6.2%** | **6.4%** | **26 of 54** |
+| **AE** | 18 | 9/9, 9/9 | $8.5276 | $6.2575 | **26.6%** | **23.4%** | **8 of 9** |
+| AF, identical confirmation | running | | | | | | |
+| **Shipping configuration, pooled** | **18** | **9/9, 9/9** | **$8.5276** | **$6.2575** | **26.6%** | **23.4%** | **8 of 9** |
+
+**How the configuration was found.** Five earlier cohorts on the same tasks measured configurations that are no longer shipped: the released 0.35.0 build (which shortened the agent's search results before the model saw them), the corrected build still combined with command-output shortening, and an enlarged repository summary. Each lost on the largest checkout and each is published in full; their sums are the cost of the search, not a property of the product.
+
+| Cohort | Trials | Correct (plain, TS) | Plain Claude Code | With TokenSaver | Saving (sums) | Mean paired saving | Pairs won |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Y, released 0.35.0 | 18 | 8/9, 8/9 | $8.3555 | $8.2747 | 1.0% | 21.8% | 5 of 9 |
+| Z, released 0.35.0, repository summary for any size | 18 | 8/9, 9/9 | $6.8715 | $8.1251 | -18.2% | 4.1% | 4 of 9 |
+| AA, corrected build, command-output shortening still on | 18 | 9/9, 9/9 | $7.9391 | $8.8115 | -11.0% | 1.7% | 4 of 9 |
+| AC, corrected build, experimental larger repository summary (retired by its pre-registered rule) | 18 | 9/9, 9/9 | $7.6593 | $9.7077 | -26.7% | -5.8% | 3 of 9 |
+| AD, as AC with command-output shortening off | 18 | 9/9, 9/9 | $8.4605 | $9.6213 | -13.7% | -12.3% | 2 of 9 |
+| Superseded configurations, pooled | 90 | 43/45, 44/45 | $39.2859 | $44.5402 | -13.4% | 2.6% | 18 of 45 |
+| All heavier cohorts including the shipping configuration | 108 | 52/54, 53/54 | $47.8136 | $50.7977 | -6.2% | 6.4% | 26 of 54 |
 
 Both percentage columns are positive when TokenSaver is cheaper. "Saving (sums)" compares cohort totals; "Mean paired saving" is the typical effect on one pair (the mean of per-pair log cost ratios, sign flipped), which is why a cohort dominated by one expensive task can show the two with opposite signs. The per-cohort result pages report the same quantity as a signed change (negative when TokenSaver is cheaper).
 
-Per task over all six cohorts (eighteen pairs each): textwrap 20% lower, rust-url 11% lower, pulldown-cmark 15% higher; in the shipping configuration alone (AE) every task is lower: textwrap 20%, rust-url 24%, pulldown-cmark 26%. The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. How the configuration was reached: after Z, release 0.35.0 was found to shorten single-file search results before the model saw them (reproduced by replay, corrected); AA showed the correction was necessary but not sufficient; AC tried a larger repository summary and retired it; AD removed command-output shortening and brought pulldown-cmark level; AE keeps only the small summary and the corrected build and wins every task, with TokenSaver trials making 20% fewer requests and producing 30% fewer output tokens than plain. AE is one nine-pair cohort and is quoted with the pooled rows beside it; a confirmation run of the same configuration follows. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md), [`AA-RESULTS.md`](claude-sonnet-5/results/AA-RESULTS.md), [`AC-RESULTS.md`](claude-sonnet-5/results/AC-RESULTS.md), [`AD-RESULTS.md`](claude-sonnet-5/results/AD-RESULTS.md), [`AE-RESULTS.md`](claude-sonnet-5/results/AE-RESULTS.md).
+Per task in the shipping configuration: textwrap 20% lower, rust-url 24% lower, pulldown-cmark 26% lower. Per task over all six cohorts (eighteen pairs each): textwrap 20% lower, rust-url 11% lower, pulldown-cmark 15% higher. The sums are dominated by pulldown-cmark, whose trials cost five to eight times the others; the mean paired change is the typical effect on a pair regardless of its size. Both are reported because on heavier tasks the per-pair spread is twice that of the lean tasks, so nine-pair cohorts cannot separate them. How the configuration was reached: after Z, release 0.35.0 was found to shorten single-file search results before the model saw them (reproduced by replay, corrected); AA showed the correction was necessary but not sufficient; AC tried a larger repository summary and retired it; AD removed command-output shortening and brought pulldown-cmark level; AE keeps only the small summary and the corrected build and wins every task, with TokenSaver trials making 20% fewer requests and producing 30% fewer output tokens than plain. AE is one nine-pair cohort; identical confirmation cohorts are being added to its pooled row, and every one of them will be published whatever it shows. Details: [`Y-RESULTS.md`](claude-sonnet-5/results/Y-RESULTS.md), [`Z-RESULTS.md`](claude-sonnet-5/results/Z-RESULTS.md), [`AA-RESULTS.md`](claude-sonnet-5/results/AA-RESULTS.md), [`AC-RESULTS.md`](claude-sonnet-5/results/AC-RESULTS.md), [`AD-RESULTS.md`](claude-sonnet-5/results/AD-RESULTS.md), [`AE-RESULTS.md`](claude-sonnet-5/results/AE-RESULTS.md).
 
-Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why only the pooled sum across all cohorts is quoted as the saving.
+Read the spread as part of the result. Between identical runs the cost of a single pair varies by about 25%, so nine-pair cohorts of the same design can land a full swing apart, as U and X did. That is why every cohort has three pairs per task, why every scheduled cohort is published whether it wins or loses, and why the saving quoted for a configuration is its pooled sum across all cohorts that ran it.
 
 ---
 
