@@ -1,0 +1,36 @@
+START | subscript-pairing | pair1-vice | 2026-09-11T23:26:24Z
+RESULT | subscript-pairing | pair1-vice | correct=true | $1.959822 | 840.6s | tools=58
+START | subscript-pairing | pair1-raw | 2026-09-11T23:40:09Z
+RESULT | subscript-pairing | pair1-raw | correct=true | $1.712427 | 765.5s | tools=46
+START | path-caret-encoding | pair1-raw | 2026-09-11T23:52:39Z
+RESULT | path-caret-encoding | pair1-raw | correct=true | $0.423248 | 155.1s | tools=31
+START | path-caret-encoding | pair1-vice | 2026-09-11T23:55:28Z
+RESULT | path-caret-encoding | pair1-vice | correct=true | $0.405541 | 110.6s | tools=25
+START | columns-overflow | pair1-vice | 2026-09-11T23:57:35Z
+RESULT | columns-overflow | pair1-vice | correct=true | $0.176556 | 79.2s | tools=8
+START | columns-overflow | pair1-raw | 2026-09-11T23:59:21Z
+RESULT | columns-overflow | pair1-raw | correct=true | $0.127999 | 73.0s | tools=9
+START | subscript-pairing | pair2-raw | 2026-09-12T00:00:55Z
+RESULT | subscript-pairing | pair2-raw | correct=true | $2.442759 | 949.1s | tools=61
+START | subscript-pairing | pair2-vice | 2026-09-12T00:16:18Z
+RESULT | subscript-pairing | pair2-vice | correct=true | $1.902135 | 832.5s | tools=59
+START | path-caret-encoding | pair2-vice | 2026-09-12T00:29:48Z
+RESULT | path-caret-encoding | pair2-vice | correct=true | $0.340595 | 108.0s | tools=20
+START | path-caret-encoding | pair2-raw | 2026-09-12T00:31:52Z
+RESULT | path-caret-encoding | pair2-raw | correct=true | $0.304608 | 120.0s | tools=24
+START | columns-overflow | pair2-raw | 2026-09-12T00:34:06Z
+RESULT | columns-overflow | pair2-raw | correct=true | $0.379952 | 203.4s | tools=21
+START | columns-overflow | pair2-vice | 2026-09-12T00:37:44Z
+RESULT | columns-overflow | pair2-vice | correct=true | $0.314601 | 117.6s | tools=15
+START | subscript-pairing | pair3-vice | 2026-09-12T00:40:08Z
+RESULT | subscript-pairing | pair3-vice | correct=true | $1.633618 | 743.4s | tools=54
+START | subscript-pairing | pair3-raw | 2026-09-12T00:52:11Z
+RESULT | subscript-pairing | pair3-raw | correct=true | $0.751084 | 297.9s | tools=44
+START | path-caret-encoding | pair3-raw | 2026-09-12T00:57:06Z
+RESULT | path-caret-encoding | pair3-raw | correct=true | $0.332373 | 111.3s | tools=23
+START | path-caret-encoding | pair3-vice | 2026-09-12T00:59:12Z
+RESULT | path-caret-encoding | pair3-vice | correct=true | $0.395265 | 116.5s | tools=21
+START | columns-overflow | pair3-vice | 2026-09-12T01:01:25Z
+RESULT | columns-overflow | pair3-vice | correct=true | $0.377586 | 254.8s | tools=23
+START | columns-overflow | pair3-raw | 2026-09-12T01:05:50Z
+RESULT | columns-overflow | pair3-raw | correct=true | $0.384369 | 321.3s | tools=18
