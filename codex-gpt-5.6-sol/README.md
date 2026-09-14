@@ -1,8 +1,10 @@
 # Codex / GPT-5.6 Sol
 
-Latest development status: [Q passed offline qualification](results/Q-OFFLINE.md); its live pilot is awaiting disk capacity. P measured 14.20% savings, and N's unchanged confirmation measured 4.49%. The 15% confirmation target is still unmet.
+Latest completed pilot: [P measured **14.20% savings with 6/6 trials correct**](results/P-RESULTS.md). P still needs its own unchanged confirmation. The earlier H confirmation measured 5.77% for G's configuration; the later N confirmation measured 4.49% for M's configuration. Neither is a confirmation of P.
 
-Completed-task studies using official Codex 0.152.1 at high effort on Linux/WSL. All scheduled E–H runs are retained: 48 correct trials across four separately evaluated cohorts.
+[Q passed offline qualification](results/Q-OFFLINE.md); its live pilot has not started. The 15% confirmation target is still unmet.
+
+Completed-task studies using official Codex 0.152.1 at high effort on Linux/WSL. The evidence bundle covers 102 completed trials and 1,873 recorded model requests across cohorts E–H and J–P. Different configurations are evaluated separately; all scheduled trials are retained.
 
 These studies were conducted by the TokenSaver team. Independent checks refer
 to the acceptance grader and usage reconciliation, not a third-party endorsement.

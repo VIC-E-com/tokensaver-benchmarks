@@ -80,7 +80,9 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 
 ## Results: Codex with GPT-5.6 Sol
 
-The independent 18-trial confirmation H completed with **18/18 correct and 5.77% lower total API-equivalent cost**. It confirms the direction of the six-trial pilot, with a smaller saving. Agent elapsed time was 13.74% higher, so this is a cost result, not a speed claim.
+The **latest completed development pilot, P**, measured **14.20% lower total API-equivalent cost**, with **6/6 trials correct**: $1.6391448 plain versus $1.4064104 with TokenSaver. This newer configuration still needs its own unchanged confirmation.
+
+The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 correct** for the earlier G configuration. H did not test P. H's agent elapsed time was 13.74% higher. Each cohort is reported separately below.
 
 | Cohort | Trials | Correct | Plain Codex | With TokenSaver | Saving | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|
