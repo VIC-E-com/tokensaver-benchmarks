@@ -1,0 +1,57 @@
+{
+  "native": [
+    {
+      "task": "subscript-pairing",
+      "indexed_source_files": 71,
+      "map_bytes": 390,
+      "unchanged_provider_contracts": 3,
+      "exact_index": true,
+      "source_bodies_emitted": 0
+    },
+    {
+      "task": "path-caret-encoding",
+      "indexed_source_files": 40,
+      "map_bytes": 1278,
+      "unchanged_provider_contracts": 3,
+      "exact_index": true,
+      "source_bodies_emitted": 0
+    },
+    {
+      "task": "columns-overflow",
+      "indexed_source_files": 48,
+      "map_bytes": 1565,
+      "unchanged_provider_contracts": 3,
+      "exact_index": true,
+      "source_bodies_emitted": 0
+    }
+  ],
+  "client": [
+    {
+      "mode": "map",
+      "context_bytes": 723,
+      "context_sha256": "f80df0218b7cf0dee1c09fe5798b99aaab7862c4fe7c5d83ae20d6ad6a27a953",
+      "provider_request_reached": true,
+      "elapsed_ms": 462,
+      "external_inference": 0
+    },
+    {
+      "mode": "failure",
+      "context_bytes": 0,
+      "context_sha256": null,
+      "provider_request_reached": true,
+      "elapsed_ms": 267,
+      "external_inference": 0
+    },
+    {
+      "mode": "timeout",
+      "context_bytes": 0,
+      "context_sha256": null,
+      "provider_request_reached": true,
+      "elapsed_ms": 1257,
+      "external_inference": 0
+    }
+  ],
+  "host_sha256": "a3b8f35d5ba79d4f73e4a104b16a76d00618325be949ab77e5b9a8912b55d0ed",
+  "harness_sha256": "dcb8a83be30fba90de3b40cbbceb2627846ebce807be783b15293a3ceb49c790",
+  "external_inference": 0
+}

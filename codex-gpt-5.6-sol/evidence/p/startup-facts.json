@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "rows": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 3155,
+      "source_bytes": 0,
+      "context_sha256": "9ef5f5d795bb7e7c22b50a852c1759ec93800e017e64281d712a69b2543ef0d7",
+      "facts": {
+        "dropped_for_size": [
+          "item_map"
+        ],
+        "facts_bytes": 3155,
+        "item_map_bytes": null,
+        "item_map_items": null,
+        "listing_entries": 56,
+        "listing_groups": 4,
+        "manifest_bytes": 267,
+        "manifest_name": "Cargo.toml",
+        "profile": "v3"
+      },
+      "independent_replay_equal": true
+    },
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 1801,
+      "source_bytes": 0,
+      "context_sha256": "1b90e00c5a05c31c441d339fcc4e73c69b1d7c4f7259bf5905f21d9fadd2b66d",
+      "facts": {
+        "dropped_for_size": [
+          "item_map"
+        ],
+        "facts_bytes": 1801,
+        "item_map_bytes": null,
+        "item_map_items": null,
+        "listing_entries": 40,
+        "listing_groups": 0,
+        "manifest_bytes": 123,
+        "manifest_name": "Cargo.toml",
+        "profile": "v3"
+      },
+      "independent_replay_equal": true
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 6959,
+      "source_bytes": 0,
+      "context_sha256": "727924946dcd9b9107c0232f5f67ac65ed37578bafe6769be3ff5e3db5b6da26",
+      "facts": {
+        "dropped_for_size": [],
+        "facts_bytes": 6959,
+        "item_map_bytes": 3044,
+        "item_map_items": 128,
+        "listing_entries": 48,
+        "listing_groups": 0,
+        "manifest_bytes": 1642,
+        "manifest_name": "Cargo.toml",
+        "profile": "v3"
+      },
+      "independent_replay_equal": true
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    }
+  ]
+}

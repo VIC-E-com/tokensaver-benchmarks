@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {priceRequest,reconcileRollout} from './usage.mjs';
+const usage=(input=100,cached=60,writes=10,output=20)=>({input_tokens:input,cached_input_tokens:cached,cache_write_input_tokens:writes,output_tokens:output});
+const context={type:'turn_context',payload:{model:'gpt-5.6-sol',effort:'high'}};
+const e=(last,total=last)=>({type:'event_msg',payload:{type:'token_count',info:{last_token_usage:last,total_token_usage:total}}});
+test('prices disjoint buckets and output once',()=>assert.equal(priceRequest(usage()),594000n));
+test('uses per-request context tier inclusive threshold',()=>{assert.equal(priceRequest(usage(272000,0,0,0)),1088000000n);assert.equal(priceRequest(usage(272001,0,0,0)),2176008000n);});
+test('rejects missing fractional negative and overlapping buckets',()=>{for(const v of [{},usage(-1),usage(1,2,0),usage(10,8,3),usage(100,0,0,1.1),{...usage(),cache_write_input_tokens:undefined}])assert.throws(()=>priceRequest(v));});
+test('deduplicates unchanged cumulative events',()=>{const u=usage();const r=reconcileRollout([context,e(u),e(u)],u);assert.equal(r.requests.length,1);assert.equal(r.api_equivalent_nanousd,'594000');});
+test('aggregates request costs without promoting the whole turn to long tier',()=>{const a=usage(200000,0,0,1),total=usage(400000,0,0,2);const r=reconcileRollout([context,e(a),e(a,total)],total);assert.equal(r.api_equivalent_nanousd,'1600040000');});
+test('does not invent absent final write count when rollout supplies it',()=>{const u=usage();const final={...u};delete final.cache_write_input_tokens;assert.equal(reconcileRollout([context,e(u)],final).total.cache_write_input_tokens,10);});
+test('requires complete reconciliation including final total',()=>{const u=usage();assert.throws(()=>reconcileRollout([context,e(u)],usage(101)));assert.throws(()=>reconcileRollout([context,e(u),e(u,usage(300,100,20,40))],u));assert.throws(()=>reconcileRollout([context],u));});
+test('rejects changed or missing model and effort',()=>{for(const c of [null,{type:'turn_context',payload:{model:'other',effort:'high'}},{type:'turn_context',payload:{model:'gpt-5.6-sol',effort:'low'}}])assert.throws(()=>reconcileRollout([...(c?[c]:[]),e(usage())],usage()));});

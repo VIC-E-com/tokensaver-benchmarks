@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "manifests": [
+    {
+      "manifest": "source.sha256",
+      "files_verified": 78,
+      "sha256": "129406faf562a0771385a6ba9f34c8a81b1df869440275a8fc6b35656203f8ee"
+    },
+    {
+      "manifest": "study-artifacts.sha256",
+      "files_verified": 6,
+      "sha256": "448ca00972c3d9e56922b45724bb5bb8810af65e3d726cf89939fe8bcaf16e42"
+    }
+  ],
+  "original_audit_sha256": "85e2072a7bb81f9aaff9178932abd92460f53fff242adf0f394f09c32c329c1f"
+}

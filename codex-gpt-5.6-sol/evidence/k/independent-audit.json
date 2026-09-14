@@ -1,0 +1,296 @@
+{
+  "cohort": "K",
+  "description": "Command-output coverage pilot",
+  "status": "complete",
+  "planned_trials": 6,
+  "all_correct": true,
+  "all_request_usage_reconciled": true,
+  "hook_log_complete": true,
+  "aggregate_savings_percent": null,
+  "recorded_usage_savings_percent": -0.2774915137315537,
+  "clean_comparison": false,
+  "qualification_savings_percent": null,
+  "failed_request_usage_unreported": true,
+  "totals": {
+    "raw": {
+      "trials": 3,
+      "correct": 3,
+      "cost_nanousd": "1901896000",
+      "cost_usd": 1.901896,
+      "cost_lower_bound_usd": 1.9018959999999998,
+      "cost_upper_bound_usd": null,
+      "seconds": 619.721025744,
+      "tool_calls": 45,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "native_queries": 0,
+      "input_tokens": 1712671,
+      "cached_input_tokens": 1489280,
+      "output_tokens": 20631
+    },
+    "vice": {
+      "trials": 3,
+      "correct": 3,
+      "cost_nanousd": "1907173600",
+      "cost_usd": 1.9071736,
+      "cost_lower_bound_usd": 1.9071736000000001,
+      "cost_upper_bound_usd": 3.3813504,
+      "seconds": 668.645576002,
+      "tool_calls": 50,
+      "hook_invocations": 41,
+      "hook_rewrites": 14,
+      "native_queries": 8,
+      "input_tokens": 2153759,
+      "cached_input_tokens": 1977984,
+      "output_tokens": 20644
+    }
+  },
+  "pairs": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.998856,
+      "vice_cost_usd": 1.194648,
+      "savings_percent": null,
+      "clean_comparison": false,
+      "recorded_usage_savings_percent": -19.60162425815133
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.4380936,
+      "vice_cost_usd": 0.4386688,
+      "savings_percent": -0.13129614310731785,
+      "clean_comparison": true,
+      "recorded_usage_savings_percent": -0.13129614310731785
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.4649464,
+      "vice_cost_usd": 0.2738568,
+      "savings_percent": 41.09927509923724,
+      "clean_comparison": true,
+      "recorded_usage_savings_percent": 41.09927509923724
+    }
+  ],
+  "rows": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 1280640,
+        "input_tokens": 1396188,
+        "output_tokens": 11010,
+        "reasoning_output_tokens": 4786
+      },
+      "priced_usage": {
+        "input_tokens": 1396188,
+        "cached_input_tokens": 1280640,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 11010
+      },
+      "cost_usd": 1.194648,
+      "cost_nanousd": "1194648000",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 339.282238432,
+      "tool_calls": 28,
+      "hook_invocations": 22,
+      "hook_rewrites": 5,
+      "hook_log_complete": true,
+      "native_queries": 5,
+      "events_sha256": "fde9c0c592c0a0c44f734e3fdea37fcf2bf77316dba4a4146b40fca35a2de274",
+      "rollout_sha256": "bbd303356ff9d706b450646b7a5e4bfa8bc71374123afa97ed8ba10b6aff1734",
+      "recovery": null,
+      "cost_lower_bound_usd": 1.194648,
+      "cost_upper_bound_usd": 2.279196
+    },
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "input_tokens": 956428,
+        "cached_input_tokens": 837760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9454
+      },
+      "priced_usage": {
+        "input_tokens": 956428,
+        "cached_input_tokens": 837760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9454
+      },
+      "cost_usd": 0.998856,
+      "cost_nanousd": "998856000",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 267.047893405,
+      "tool_calls": 19,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "8850f6ef5cc27baab660497c2c16c96afe71cf9ffeece192def4b66ddc7220ae",
+      "rollout_sha256": "f8f62f737a0638dd7ce12b72f3ca93207f258c0099a66fc9320fa67b643f06de",
+      "recovery": {
+        "reason": "provider_capacity",
+        "attempts": 2,
+        "original_attempt_failed": true,
+        "completed_after_resume": true,
+        "failed_request_usage_unreported": true,
+        "clean_comparison": false,
+        "original_events_sha256": "8850f6ef5cc27baab660497c2c16c96afe71cf9ffeece192def4b66ddc7220ae",
+        "resume_events_sha256": "8b3b87279bec9b15d992a4318ec56cc8a7fc4fc19db13baba2a9693cd11ccc85",
+        "final_resume_usage": {
+          "input_tokens": 717135,
+          "cached_input_tokens": 646656,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7076,
+          "reasoning_output_tokens": 4050
+        },
+        "reported_cost_before_resume": 0.3167576
+      },
+      "cost_lower_bound_usd": 0.998856,
+      "cost_upper_bound_usd": null
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 314624,
+        "input_tokens": 368800,
+        "output_tokens": 4777,
+        "reasoning_output_tokens": 2321
+      },
+      "priced_usage": {
+        "input_tokens": 368800,
+        "cached_input_tokens": 314624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4777
+      },
+      "cost_usd": 0.4380936,
+      "cost_nanousd": "438093600",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 166.170651302,
+      "tool_calls": 9,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "ea867b53fb1b9a241648821161c29335e218319821e1e4ed59d137cd3304b7e3",
+      "rollout_sha256": "9d8e49183ae4bfa33508c1635e4f733101e852ed1327a2b552be3bde4411e524",
+      "recovery": null,
+      "cost_lower_bound_usd": 0.4380936,
+      "cost_upper_bound_usd": 0.8284172
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 472832,
+        "input_tokens": 510696,
+        "output_tokens": 4904,
+        "reasoning_output_tokens": 1906
+      },
+      "priced_usage": {
+        "input_tokens": 510696,
+        "cached_input_tokens": 472832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4904
+      },
+      "cost_usd": 0.4386688,
+      "cost_nanousd": "438668800",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 150.373658447,
+      "tool_calls": 10,
+      "hook_invocations": 9,
+      "hook_rewrites": 5,
+      "hook_log_complete": true,
+      "native_queries": 1,
+      "events_sha256": "c4304c7216f66c1e98c2d5b4d0b5a3b0b8cf8c5f80aa9414f96d34c3d5ca0fd6",
+      "rollout_sha256": "cb0f4a4a507d063def332b3ad3fb75b8a464f76dbcac09c171cfadd19ecc356a",
+      "recovery": null,
+      "cost_lower_bound_usd": 0.4386688,
+      "cost_upper_bound_usd": 0.8282976
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 224512,
+        "input_tokens": 246875,
+        "output_tokens": 4730,
+        "reasoning_output_tokens": 2553
+      },
+      "priced_usage": {
+        "input_tokens": 246875,
+        "cached_input_tokens": 224512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4730
+      },
+      "cost_usd": 0.2738568,
+      "cost_nanousd": "273856800",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 178.989679123,
+      "tool_calls": 12,
+      "hook_invocations": 10,
+      "hook_rewrites": 4,
+      "hook_log_complete": true,
+      "native_queries": 2,
+      "events_sha256": "5b072d92cfd49ae89a2e10ce1fa8371206175e6d0c00bfe983f912519df21c93",
+      "rollout_sha256": "55356ac1acbe63376c539d1271c1de723885c4945884c74fffcdecf8c01c4d7f",
+      "recovery": null,
+      "cost_lower_bound_usd": 0.2738568,
+      "cost_upper_bound_usd": 0.2738568
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 336896,
+        "input_tokens": 387443,
+        "output_tokens": 6400,
+        "reasoning_output_tokens": 2909
+      },
+      "priced_usage": {
+        "input_tokens": 387443,
+        "cached_input_tokens": 336896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6400
+      },
+      "cost_usd": 0.4649464,
+      "cost_nanousd": "464946400",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 186.502481037,
+      "tool_calls": 17,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "83bacb67dc6a6cb29b5ff91e6f289ca106c18c85e704c742197e087c969677d0",
+      "rollout_sha256": "cd000263308e14d6cc916531c6d397a4ade1322c935d83ea5398f9c8219a9fa5",
+      "recovery": null,
+      "cost_lower_bound_usd": 0.4649464,
+      "cost_upper_bound_usd": 0.8658928
+    }
+  ]
+}

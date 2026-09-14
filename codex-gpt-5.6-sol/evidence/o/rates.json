@@ -1,0 +1,10 @@
+{
+  "model":"gpt-5.6-sol",
+  "usd_per_million":{"uncached_input":4.0,"cached_input":0.4,"cache_write_input":5.0,"output":20.0},
+  "long_context_usd_per_million":{"uncached_input":8.0,"cached_input":0.8,"cache_write_input":10.0,"output":30.0},
+  "long_context_threshold_input_tokens":272000,
+  "source_urls":["https://developers.openai.com/api/docs/models/gpt-5.6-sol","https://developers.openai.com/api/docs/pricing","https://developers.openai.com/api/docs/guides/prompt-caching"],
+  "verified_date":"2026-09-08",
+  "pricing_tier":"standard API-equivalent; not subscription invoices",
+  "missing_cache_writes":"bounded between zero and input minus cached, never silently zero"
+}

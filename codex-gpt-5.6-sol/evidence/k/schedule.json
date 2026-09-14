@@ -1,0 +1,32 @@
+[
+  {
+    "task": "subscript-pairing",
+    "pair": 1,
+    "arm": "vice"
+  },
+  {
+    "task": "subscript-pairing",
+    "pair": 1,
+    "arm": "raw"
+  },
+  {
+    "task": "path-caret-encoding",
+    "pair": 1,
+    "arm": "raw"
+  },
+  {
+    "task": "path-caret-encoding",
+    "pair": 1,
+    "arm": "vice"
+  },
+  {
+    "task": "columns-overflow",
+    "pair": 1,
+    "arm": "vice"
+  },
+  {
+    "task": "columns-overflow",
+    "pair": 1,
+    "arm": "raw"
+  }
+]

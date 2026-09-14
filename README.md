@@ -2,7 +2,7 @@
 
 **Independent, reproducible measurements of what TokenSaver saves on real coding-agent work.**
 
-TokenSaver reduces what a coding agent costs to run without changing the model, the effort level, the prompt or the code the agent produces. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. Every number is a completed, graded task paid for at the provider, with the plain client run side by side under identical conditions.
+These studies test whether TokenSaver reduces whole-task cost while keeping the model, effort level and task prompt fixed. Agents produce their own edits, which independent acceptance tests check. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. Every number is a completed, graded task paid for at the provider, with the plain client run side by side under identical conditions.
 
 > **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
@@ -78,6 +78,34 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 
 ---
 
+## Results: Codex with GPT-5.6 Sol
+
+The independent 18-trial confirmation H completed with **18/18 correct and 5.77% lower total API-equivalent cost**. It confirms the direction of the six-trial pilot, with a smaller saving. Agent elapsed time was 13.74% higher, so this is a cost result, not a speed claim.
+
+| Cohort | Trials | Correct | Plain Codex | With TokenSaver | Saving | Pairs won |
+|---|---:|---:|---:|---:|---:|---:|
+| [E: Original long-task configuration](codex-gpt-5.6-sol/results/E-RESULTS.md) | 18 | 18/18 | $4.2180664 | $5.0501440 | -19.73% | 0/9 |
+| [F: Direct context-tool pilot](codex-gpt-5.6-sol/results/F-RESULTS.md) | 6 | 6/6 | $1.4121216 | $1.9443032 | -37.69% | 0/3 |
+| [G: Structured context presentation pilot](codex-gpt-5.6-sol/results/G-RESULTS.md) | 6 | 6/6 | $1.5826472 | $1.4332192 | 9.44% | 1/3 |
+| [H: Independent structured-context confirmation](codex-gpt-5.6-sol/results/H-RESULTS.md) | 18 | 18/18 | $5.0232864 | $4.7334304 | 5.77% | 6/9 |
+| [J: Native context delivery pilot](codex-gpt-5.6-sol/results/J-RESULTS.md) | 6 | 6/6 | $1.6082752 | $1.4741952 | 8.34% | 2/3 |
+| [K: Command-output coverage pilot](codex-gpt-5.6-sol/results/K-RESULTS.md) | 6 | 6/6 | $1.9018960 | $1.9071736 | Not qualified (capacity recovery) | Not comparable |
+| [L: Composable structured context pilot](codex-gpt-5.6-sol/results/L-RESULTS.md) | 6 | 6/6 | $1.8844968 | $1.9389408 | -2.89% | 1/3 |
+| [M: Source-fidelity pilot](codex-gpt-5.6-sol/results/M-RESULTS.md) | 6 | 6/6 | $1.9337648 | $1.5964504 | 17.44% | 2/3 |
+| [N: Unchanged source-fidelity confirmation](codex-gpt-5.6-sol/results/N-RESULTS.md) | 18 | 18/18 | $5.0827568 | $4.8544112 | 4.49% | 5/9 |
+| [O: Visible composable-tool guidance](codex-gpt-5.6-sol/results/O-RESULTS.md) | 6 | 6/6 | $1.5717752 | $1.9249512 | -22.47% | 0/3 |
+| [P: Bounded startup repository facts](codex-gpt-5.6-sol/results/P-RESULTS.md) | 6 | 6/6 | $1.6391448 | $1.4064104 | 14.20% | 2/3 |
+
+Latest completed source-fidelity confirmation N: **4.49% savings, 18/18 correct**. M's 17.44% pilot did not hold at the 15% target. Both full cohorts are preserved separately; the target remains unmet.
+
+G + H together: 24/24 correct, $6.6059336 plain versus $6.1666496 with TokenSaver, **6.65% pooled saving**. H includes disclosed logging and malformed-input hardening in the experimental harness; the task/model/product configuration and optimization behavior are unchanged. E and F tested earlier configurations and remain reported separately. These Codex results are not pooled with Claude.
+
+See [Codex methodology and evidence](codex-gpt-5.6-sol/README.md).
+
+[Q is offline-qualified](codex-gpt-5.6-sol/results/Q-OFFLINE.md) for the next Codex development pilot. No Q model cohort has run and no Q cost saving is claimed; the 15% confirmation target remains unmet.
+
+---
+
 ## What is in the repository
 
 ```
@@ -112,7 +140,7 @@ Run the same three tasks with a plain Claude Code installation and with TokenSav
 
 ## Limits
 
-Six tasks, one model, one client version, Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohorts disagree on where the saving lands, and on the largest checkout measured TokenSaver cost more in five cohorts before the shipping configuration was reached in the sixth, which won that task in all three pairs; that configuration has two nine-pair cohorts behind it so far. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
+Six task definitions across the Claude and Codex studies, with the model and client version pinned within each study; Rust maintenance work only. Savings depend on the workload: the lean cohorts and the heavier cohorts disagree on where the saving lands, and on the largest checkout measured TokenSaver cost more in five cohorts before the shipping configuration was reached in the sixth, which won that task in all three pairs; that configuration has two nine-pair cohorts behind it so far. Costs are API-equivalent at fixed tariffs computed from provider usage fields, not billed invoices; Claude Code's own auto-compaction requests are included when they occur. Nothing in this repository is a universal savings figure.
 
 ---
 

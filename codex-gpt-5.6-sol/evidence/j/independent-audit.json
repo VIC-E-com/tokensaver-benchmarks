@@ -1,0 +1,252 @@
+{
+  "cohort": "J",
+  "description": "Native context delivery pilot",
+  "status": "complete",
+  "planned_trials": 6,
+  "all_correct": true,
+  "all_request_usage_reconciled": true,
+  "hook_log_complete": true,
+  "aggregate_savings_percent": 8.336881648115945,
+  "totals": {
+    "raw": {
+      "trials": 3,
+      "correct": 3,
+      "cost_nanousd": "1608275200",
+      "cost_usd": 1.6082752,
+      "cost_lower_bound_usd": 1.6082752,
+      "cost_upper_bound_usd": 3.0554004,
+      "seconds": 488.46598781600005,
+      "tool_calls": 32,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "native_queries": 0,
+      "input_tokens": 1394121,
+      "cached_input_tokens": 1191808,
+      "output_tokens": 16115
+    },
+    "vice": {
+      "trials": 3,
+      "correct": 3,
+      "cost_nanousd": "1474195200",
+      "cost_usd": 1.4741952,
+      "cost_lower_bound_usd": 1.4741952,
+      "cost_upper_bound_usd": 2.592656,
+      "seconds": 571.595242818,
+      "tool_calls": 40,
+      "hook_invocations": 30,
+      "hook_rewrites": 5,
+      "native_queries": 10,
+      "input_tokens": 1489806,
+      "cached_input_tokens": 1342208,
+      "output_tokens": 17346
+    }
+  },
+  "pairs": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.609244,
+      "vice_cost_usd": 0.8516104,
+      "savings_percent": -39.78149969470359
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.5810408,
+      "vice_cost_usd": 0.3973304,
+      "savings_percent": 31.617469891959406
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "correct": true,
+      "raw_cost_usd": 0.4179904,
+      "vice_cost_usd": 0.2252544,
+      "savings_percent": 46.11014989817947
+    }
+  ],
+  "rows": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 938496,
+        "input_tokens": 1008789,
+        "output_tokens": 9752,
+        "reasoning_output_tokens": 4397
+      },
+      "priced_usage": {
+        "input_tokens": 1008789,
+        "cached_input_tokens": 938496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9752
+      },
+      "cost_usd": 0.8516104,
+      "cost_nanousd": "851610400",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 289.586759161,
+      "tool_calls": 24,
+      "hook_invocations": 18,
+      "hook_rewrites": 2,
+      "hook_log_complete": true,
+      "native_queries": 6,
+      "events_sha256": "159d80580702e7c7951f708e6d3f4d3ce64e1f402bc7216c8cfdb7b8c6228a2f",
+      "rollout_sha256": "80486226494c0d69b8ccb3aedc71d604dc8e50f5598bb43282387758cb545ff1"
+    },
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 529920,
+        "input_tokens": 592669,
+        "output_tokens": 7314,
+        "reasoning_output_tokens": 3195
+      },
+      "priced_usage": {
+        "input_tokens": 592669,
+        "cached_input_tokens": 529920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7314
+      },
+      "cost_usd": 0.609244,
+      "cost_nanousd": "609244000",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 195.593445654,
+      "tool_calls": 13,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "d79e99742b8b990a767aea9f7eb3a4f8b73f625f11f0753be75f0024e353f900",
+      "rollout_sha256": "245ed38fd1c5008c5423deb6913411ddba0dc90a825f05ec230e3d8f4e3c25b3"
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 322432,
+        "input_tokens": 416954,
+        "output_tokens": 3699,
+        "reasoning_output_tokens": 1177
+      },
+      "priced_usage": {
+        "input_tokens": 416954,
+        "cached_input_tokens": 322432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3699
+      },
+      "cost_usd": 0.5810408,
+      "cost_nanousd": "581040800",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 107.071538441,
+      "tool_calls": 7,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "12dac9cb6f9675791f072b8462f37bb03fbe3c121e45208b34f5d1c0cf5a12f2",
+      "rollout_sha256": "7371de902da067e3927e909ef2e046cd394fc8de955251813b6adb35c5431255"
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 238336,
+        "input_tokens": 297355,
+        "output_tokens": 3296,
+        "reasoning_output_tokens": 1094
+      },
+      "priced_usage": {
+        "input_tokens": 297355,
+        "cached_input_tokens": 238336,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3296
+      },
+      "cost_usd": 0.3973304,
+      "cost_nanousd": "397330400",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 121.406028871,
+      "tool_calls": 8,
+      "hook_invocations": 6,
+      "hook_rewrites": 1,
+      "hook_log_complete": true,
+      "native_queries": 2,
+      "events_sha256": "211efeabbc787ed9f204a5a3d97b533ad15c061c1ce5a92b2ae6788faa4f8e5b",
+      "rollout_sha256": "ff41c1af67a2279377a781f8935183278c1288aa29caee37400f9d25e889cead"
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "vice",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 165376,
+        "input_tokens": 183662,
+        "output_tokens": 4298,
+        "reasoning_output_tokens": 2052
+      },
+      "priced_usage": {
+        "input_tokens": 183662,
+        "cached_input_tokens": 165376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4298
+      },
+      "cost_usd": 0.2252544,
+      "cost_nanousd": "225254400",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 160.602454786,
+      "tool_calls": 8,
+      "hook_invocations": 6,
+      "hook_rewrites": 2,
+      "hook_log_complete": true,
+      "native_queries": 2,
+      "events_sha256": "f1a8f7c44ba2fe2643dd0abf93d718b1d002634a7f3d07e76b419f22e8aaaf14",
+      "rollout_sha256": "316cca83e7638bb072a95d9dcbdc4747e4795a7bcb182c9d297ee4e25f3d54da"
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "raw",
+      "correct": true,
+      "provider_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 339456,
+        "input_tokens": 384498,
+        "output_tokens": 5102,
+        "reasoning_output_tokens": 2872
+      },
+      "priced_usage": {
+        "input_tokens": 384498,
+        "cached_input_tokens": 339456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5102
+      },
+      "cost_usd": 0.4179904,
+      "cost_nanousd": "417990400",
+      "pricing_status": "request_usage_reconciled",
+      "seconds": 185.801003721,
+      "tool_calls": 12,
+      "hook_invocations": 0,
+      "hook_rewrites": 0,
+      "hook_log_complete": true,
+      "native_queries": 0,
+      "events_sha256": "c4fdb76481183a0a88cffa6d3153c738e266b78f57a54c80dd1d7341d13d43cd",
+      "rollout_sha256": "c6b69a3889596e45011451dd05727a8cde64f1d38166e76d9c8765717c74beca"
+    }
+  ]
+}

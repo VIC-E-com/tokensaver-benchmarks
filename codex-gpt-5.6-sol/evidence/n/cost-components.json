@@ -1,0 +1,18 @@
+{
+  "cohort": "N",
+  "basis": "Per-request frozen study tariff; each component sum verified against independent repricing. Not invoices.",
+  "usd": {
+    "raw": {
+      "ordinary": 2.042304,
+      "cached": 1.9849728,
+      "writes": 0,
+      "output": 1.05548
+    },
+    "vice": {
+      "ordinary": 1.646204,
+      "cached": 2.0086272,
+      "writes": 0,
+      "output": 1.19958
+    }
+  }
+}
