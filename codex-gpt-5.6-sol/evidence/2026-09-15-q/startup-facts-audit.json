@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "scope": "retained official-client context and startup evidence; no claim of network packet capture",
+  "qualification_scope": "pre-inference facts client probe covered parser only; post-run checks cover each completed treatment",
+  "rows": [
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 4358,
+      "source_bytes": 0,
+      "context_matches_evidence": true,
+      "recorded_before_first_usage": true,
+      "listing_included": true
+    },
+    {
+      "task": "subscript-pairing",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    },
+    {
+      "task": "path-caret-encoding",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 3723,
+      "source_bytes": 0,
+      "context_matches_evidence": true,
+      "recorded_before_first_usage": true,
+      "listing_included": true
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "vice",
+      "injected": true,
+      "context_bytes": 2491,
+      "source_bytes": 0,
+      "context_matches_evidence": true,
+      "recorded_before_first_usage": true,
+      "listing_included": true
+    },
+    {
+      "task": "columns-overflow",
+      "pair": 1,
+      "arm": "raw",
+      "injected": false
+    }
+  ]
+}

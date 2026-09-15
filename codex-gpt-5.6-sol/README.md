@@ -57,3 +57,8 @@ requests against the exported token buckets and costs.
 ## Bounded startup repository facts pilot
 
 [P](results/P-RESULTS.md): 6/6 correct, 14.20% aggregate saving. Below the15% target. Preserve the entire pilot and do not retry this candidate unchanged.
+
+
+## Bounded startup facts pilot
+
+[Q](results/2026-09-15-Q-RESULTS.md): 6/6 correct, 10.70% aggregate saving. Below the20% target. Preserve the entire pilot and do not retry this candidate unchanged.

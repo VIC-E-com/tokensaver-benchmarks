@@ -1,0 +1,36 @@
+START | subscript-pairing | pair1-vice | 2026-09-12T01:12:09Z
+RESULT | subscript-pairing | pair1-vice | correct=true | $2.042395 | 810.4s | tools=62
+START | subscript-pairing | pair1-raw | 2026-09-12T01:25:12Z
+RESULT | subscript-pairing | pair1-raw | correct=true | $1.698302 | 675.6s | tools=54
+START | path-caret-encoding | pair1-raw | 2026-09-12T01:36:04Z
+RESULT | path-caret-encoding | pair1-raw | correct=true | $0.246297 | 116.9s | tools=20
+START | path-caret-encoding | pair1-vice | 2026-09-12T01:38:17Z
+RESULT | path-caret-encoding | pair1-vice | correct=true | $0.333302 | 117.9s | tools=21
+START | columns-overflow | pair1-vice | 2026-09-12T01:40:29Z
+RESULT | columns-overflow | pair1-vice | correct=true | $0.300693 | 191.6s | tools=12
+START | columns-overflow | pair1-raw | 2026-09-12T01:43:57Z
+RESULT | columns-overflow | pair1-raw | correct=true | $0.167614 | 99.1s | tools=12
+START | subscript-pairing | pair2-raw | 2026-09-12T01:46:02Z
+RESULT | subscript-pairing | pair2-raw | correct=true | $2.214442 | 891.3s | tools=66
+START | subscript-pairing | pair2-vice | 2026-09-12T02:00:17Z
+RESULT | subscript-pairing | pair2-vice | correct=true | $1.223964 | 611.9s | tools=36
+START | path-caret-encoding | pair2-vice | 2026-09-12T02:10:06Z
+RESULT | path-caret-encoding | pair2-vice | correct=true | $0.341414 | 124.6s | tools=23
+START | path-caret-encoding | pair2-raw | 2026-09-12T02:12:27Z
+RESULT | path-caret-encoding | pair2-raw | correct=true | $0.358139 | 151.8s | tools=27
+START | columns-overflow | pair2-raw | 2026-09-12T02:15:10Z
+TRIAL_INCOMPLETE | columns-overflow | pair2-raw | 2026-09-12T02:20:17Z
+START | columns-overflow | pair2-vice | 2026-09-12T02:20:17Z
+RESULT | columns-overflow | pair2-vice | correct=true | $0.295506 | 154.2s | tools=15
+START | subscript-pairing | pair3-vice | 2026-09-12T02:23:09Z
+RESULT | subscript-pairing | pair3-vice | correct=true | $2.242705 | 1080.2s | tools=60
+START | subscript-pairing | pair3-raw | 2026-09-12T02:40:17Z
+RESULT | subscript-pairing | pair3-raw | correct=true | $1.510783 | 631.9s | tools=56
+START | path-caret-encoding | pair3-raw | 2026-09-12T02:50:23Z
+RESULT | path-caret-encoding | pair3-raw | correct=true | $0.269084 | 118.1s | tools=21
+START | path-caret-encoding | pair3-vice | 2026-09-12T02:52:34Z
+RESULT | path-caret-encoding | pair3-vice | correct=true | $0.282787 | 100.8s | tools=15
+START | columns-overflow | pair3-vice | 2026-09-12T02:54:30Z
+RESULT | columns-overflow | pair3-vice | correct=true | $0.370796 | 388.6s | tools=20
+START | columns-overflow | pair3-raw | 2026-09-12T03:01:00Z
+RESULT | columns-overflow | pair3-raw | correct=true | $0.507853 | 240.2s | tools=30

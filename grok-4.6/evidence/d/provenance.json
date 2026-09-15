@@ -1,0 +1,15 @@
+{
+  "model": "grok-4.6",
+  "effort": "high",
+  "agent": "Official Grok Build 1.0.30 (04b7ffed98c6)",
+  "proxy_commit": "9bc8cd62",
+  "proxy_sha256": "d9d219e8ddae5c5ba4ebdd575e55a1c66774ac68d091f7b5f3d03b989322fe41",
+  "native_sha256": "9dfd85b4a26678efe7195628e7cd15ba18dd94b97131f6295448a3a5ae8e4732",
+  "harness_sha256": "3ef6a31c20f64c734bc523b623abea10f5835ab2997ec3049d68d936a5bf283e",
+  "grok_sha256": "504dd6546ab991b75d36698242875ce461489cd1f8cd84285873cb55bd5c7d54",
+  "task_source": "/home/victor/ts-codex-long-20260914p-startup-facts",
+  "planned_trials": 6,
+  "api_key_exposed_to_agent": false,
+  "startup_facts": false,
+  "budget_usd": 25
+}
