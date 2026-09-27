@@ -99,6 +99,7 @@ The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 co
 | [O: Visible composable-tool guidance](codex-gpt-5.6-sol/results/O-RESULTS.md) | 6 | 6/6 | $1.5717752 | $1.9249512 | -22.47% | 0/3 |
 | [P: Bounded startup repository facts](codex-gpt-5.6-sol/results/P-RESULTS.md) | 6 | 6/6 | $1.6391448 | $1.4064104 | 14.20% | 2/3 |
 | [Q: Bounded startup facts](codex-gpt-5.6-sol/results/2026-09-15-Q-RESULTS.md) | 6 | 6/6 | $1.8180224 | $1.6235776 | 10.70% | 3/3 |
+| [R: Reliability candidate](codex-gpt-5.6-sol/results/2026-09-27-R-RESULTS.md) | 6 | 6/6 | $1.6960592 | $1.4390592 | 15.15% | 3/3 |
 
 Latest completed source-fidelity confirmation N: **4.49% savings, 18/18 correct**. M's 17.44% pilot did not hold at the 15% target. Both full cohorts are preserved separately; the target remains unmet.
 

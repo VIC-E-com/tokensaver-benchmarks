@@ -62,3 +62,8 @@ requests against the exported token buckets and costs.
 ## Bounded startup facts pilot
 
 [Q](results/2026-09-15-Q-RESULTS.md): 6/6 correct, 10.70% aggregate saving. Below the20% target. Preserve the entire pilot and do not retry this candidate unchanged.
+
+
+## Reliability pilot R
+
+[R](results/2026-09-27-R-RESULTS.md): 6/6 correct, 15.15% aggregate cost reduction. Below the prospective 30% target; not independently confirmed. All trials and per-request usage retained.
