@@ -81,9 +81,9 @@ Read the spread as part of the result. Between identical runs the cost of a sing
 
 ## Results: Codex with GPT-5.6 Sol
 
-The **latest completed development pilot, P**, measured **14.20% lower total API-equivalent cost**, with **6/6 trials correct**: $1.6391448 plain versus $1.4064104 with TokenSaver. This newer configuration still needs its own unchanged confirmation.
+The **latest completed development pilot, [S](codex-gpt-5.6-sol/results/2026-09-27-S-RESULTS.md)**, measured **19.71% lower total API-equivalent cost**, with **6/6 trials correct**: $1.7757336 plain versus $1.4257016 with TokenSaver. All three task pairs cost less with TokenSaver. Agent elapsed time was 14.83% higher. This configuration still needs its own unchanged confirmation.
 
-The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 correct** for the earlier G configuration. H did not test P. H's agent elapsed time was 13.74% higher. Each cohort is reported separately below.
+The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 correct** for the earlier G configuration. H did not test S. H's agent elapsed time was 13.74% higher. Each cohort is reported separately below.
 
 | Cohort | Trials | Correct | Plain Codex | With TokenSaver | Saving | Pairs won |
 |---|---:|---:|---:|---:|---:|---:|
