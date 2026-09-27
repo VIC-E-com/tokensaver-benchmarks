@@ -104,7 +104,7 @@ The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 co
 
 Latest Codex pilot: [S measured **19.71% lower token-priced cost, 6/6 correct, and 3/3 task pairs cheaper**](codex-gpt-5.6-sol/results/2026-09-27-S-RESULTS.md). Runtime was 14.83% longer. This is a development pilot, not an unchanged confirmation; the prospective 30% target remains unmet. Costs use fixed API-equivalent tariffs, not subscription invoices.
 
-Latest completed source-fidelity confirmation N: **4.49% savings, 18/18 correct**. M's 17.44% pilot did not hold at the 15% target. Both full cohorts are preserved separately; the target remains unmet.
+Latest completed source-fidelity confirmation N: **4.49% savings, 18/18 correct**. M's 17.44% pilot did not hold at the 15% target.
 
 G + H together: 24/24 correct, $6.6059336 plain versus $6.1666496 with TokenSaver, **6.65% pooled saving**. H includes disclosed logging and malformed-input hardening in the experimental harness; the task/model/product configuration and optimization behavior are unchanged. E and F tested earlier configurations and remain reported separately. These Codex results are not pooled with Claude.
 
