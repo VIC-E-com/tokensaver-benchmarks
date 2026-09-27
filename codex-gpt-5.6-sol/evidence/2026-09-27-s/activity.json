@@ -1,0 +1,56 @@
+[
+  {
+    "task": "subscript-pairing",
+    "pair": 1,
+    "arm": "vice",
+    "native_complete": 1,
+    "native_partial": 0,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 0
+  },
+  {
+    "task": "subscript-pairing",
+    "pair": 1,
+    "arm": "raw",
+    "native_complete": 0,
+    "native_partial": 0,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 0
+  },
+  {
+    "task": "path-caret-encoding",
+    "pair": 1,
+    "arm": "raw",
+    "native_complete": 0,
+    "native_partial": 0,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 0
+  },
+  {
+    "task": "path-caret-encoding",
+    "pair": 1,
+    "arm": "vice",
+    "native_complete": 0,
+    "native_partial": 1,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 0
+  },
+  {
+    "task": "columns-overflow",
+    "pair": 1,
+    "arm": "vice",
+    "native_complete": 1,
+    "native_partial": 0,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 2
+  },
+  {
+    "task": "columns-overflow",
+    "pair": 1,
+    "arm": "raw",
+    "native_complete": 0,
+    "native_partial": 0,
+    "native_errors": 0,
+    "offline_environment_wrapped_commands": 0
+  }
+]

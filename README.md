@@ -2,7 +2,7 @@
 
 **Independent, reproducible measurements of what TokenSaver saves on real coding-agent work.**
 
-These studies test whether TokenSaver reduces whole-task cost while keeping the model, effort level and task prompt fixed. Agents produce their own edits, which independent acceptance tests check. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. Every number is a completed, graded task paid for at the provider, with the plain client run side by side under identical conditions.
+These studies test whether TokenSaver reduces whole-task cost while keeping the model, effort level and task prompt fixed. Agents produce their own edits, which independent acceptance tests check. This repository publishes the proof: complete methodology, every trial's provider usage, correctness grades, and the scripts that reprice and audit them. Nothing here is a demo or a token-counter estimate. The studies compare completed, graded tasks using matched plain-client and TokenSaver runs. Codex costs are calculated from reported provider usage at fixed API-equivalent rates; they are not subscription invoices.
 
 > **Claude Code + Claude Sonnet 5, lean tasks, 54 matched trials across three cohorts: 8.8% lower cost, every trial correct, 20 of 27 pairs won.**
 > Cohort results ranged from 21.5% lower to 10.8% higher; the pooled figure is the one to quote.
@@ -100,6 +100,9 @@ The **earlier 18-trial confirmation H** measured **5.77% lower cost and 18/18 co
 | [P: Bounded startup repository facts](codex-gpt-5.6-sol/results/P-RESULTS.md) | 6 | 6/6 | $1.6391448 | $1.4064104 | 14.20% | 2/3 |
 | [Q: Bounded startup facts](codex-gpt-5.6-sol/results/2026-09-15-Q-RESULTS.md) | 6 | 6/6 | $1.8180224 | $1.6235776 | 10.70% | 3/3 |
 | [R: Reliability candidate](codex-gpt-5.6-sol/results/2026-09-27-R-RESULTS.md) | 6 | 6/6 | $1.6960592 | $1.4390592 | 15.15% | 3/3 |
+| [S: Command-output coverage](codex-gpt-5.6-sol/results/2026-09-27-S-RESULTS.md) | 6 | 6/6 | $1.7757336 | $1.4257016 | 19.71% | 3/3 |
+
+Latest Codex pilot: [S measured **19.71% lower token-priced cost, 6/6 correct, and 3/3 task pairs cheaper**](codex-gpt-5.6-sol/results/2026-09-27-S-RESULTS.md). Runtime was 14.83% longer. This is a development pilot, not an unchanged confirmation; the prospective 30% target remains unmet. Costs use fixed API-equivalent tariffs, not subscription invoices.
 
 Latest completed source-fidelity confirmation N: **4.49% savings, 18/18 correct**. M's 17.44% pilot did not hold at the 15% target. Both full cohorts are preserved separately; the target remains unmet.
 
@@ -107,7 +110,7 @@ G + H together: 24/24 correct, $6.6059336 plain versus $6.1666496 with TokenSave
 
 See [Codex methodology and evidence](codex-gpt-5.6-sol/README.md).
 
-[Q is offline-qualified](codex-gpt-5.6-sol/results/Q-OFFLINE.md) for the next Codex development pilot. No Q model cohort has run and no Q cost saving is claimed; the 15% confirmation target remains unmet.
+[Q is offline-qualified](codex-gpt-5.6-sol/results/Q-OFFLINE.md) for the next Codex development pilot. Q completed with 10.70% pilot savings; its result is retained separately.
 
 ---
 

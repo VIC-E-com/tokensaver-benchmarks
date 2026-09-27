@@ -1,10 +1,10 @@
 # Codex / GPT-5.6 Sol
 
-Latest completed pilot: [P measured **14.20% savings with 6/6 trials correct**](results/P-RESULTS.md). P still needs its own unchanged confirmation. The earlier H confirmation measured 5.77% for G's configuration; the later N confirmation measured 4.49% for M's configuration. Neither is a confirmation of P.
+Latest completed pilot: [S measured **19.71% lower token-priced cost with 6/6 trials correct**](results/2026-09-27-S-RESULTS.md). All three task pairs cost less; elapsed time was 14.83% longer. This is not independently confirmed and remains below the prospective 30% target.
 
-[Q passed offline qualification](results/Q-OFFLINE.md); its live pilot has not started. The 15% confirmation target is still unmet.
+R remains a separate 15.15% pilot. Earlier unchanged confirmations H and N measured 5.77% and 4.49%, respectively; favorable pilots are not substitutes for confirmation.
 
-Completed-task studies using official Codex 0.152.1 at high effort on Linux/WSL. The evidence bundle covers 102 completed trials and 1,873 recorded model requests across cohorts E–H and J–P. Different configurations are evaluated separately; all scheduled trials are retained.
+Completed-task studies using official Codex 0.152.1 at high effort on Linux/WSL. The evidence bundle covers 120 completed trials across cohorts E–H and J–S. Different configurations are evaluated separately; all scheduled trials are retained.
 
 These studies were conducted by the TokenSaver team. Independent checks refer
 to the acceptance grader and usage reconciliation, not a third-party endorsement.
@@ -20,8 +20,7 @@ Rates per million: ordinary input $4, cached input $0.40, explicit writes $5, ou
 
 Run offline arithmetic tests with `node --test tools/usage.test.mjs tools/hook-audit.test.mjs`. The usage module reprices each request with integer nanodollars. A public verification script checks the exported request sums against every trial and cohort. Raw authenticated sessions and proprietary adapter source are intentionally not distributed; this evidence bundle supports independent repricing, not a claim of a complete public treatment runner.
 
-Run `node tools/verify-evidence.mjs` to verify all 102 trials and 1,873 recorded model
-requests against the exported token buckets and costs.
+Run `node tools/verify-evidence.mjs` to verify all 120 trials and their recorded model requests against the exported token buckets and costs.
 
 
 ## Additional development pilot
@@ -67,3 +66,7 @@ requests against the exported token buckets and costs.
 ## Reliability pilot R
 
 [R](results/2026-09-27-R-RESULTS.md): 6/6 correct, 15.15% aggregate cost reduction. Below the prospective 30% target; not independently confirmed. All trials and per-request usage retained.
+
+## Command-output coverage pilot S
+
+[S](results/2026-09-27-S-RESULTS.md): **6/6 correct, 19.71% aggregate cost reduction**, 3/3 task pairs cheaper, 14.83% longer runtime. All 107 requests reconcile. Reported separately from R, with no claim of an isolated feature effect or independent confirmation.

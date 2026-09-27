@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import {priceRequest} from './usage.mjs';
 const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const fields=['input_tokens','cached_input_tokens','cache_write_input_tokens','output_tokens'];
-for(const [cohort,expected] of [['e',18],['f',6],['g',6],['h',18],['j',6],['k',6],['l',6],['m',6],['n',18],['o',6],['p',6]]) {
+for(const [cohort,expected] of [['e',18],['f',6],['g',6],['h',18],['j',6],['k',6],['l',6],['m',6],['n',18],['o',6],['p',6],['2026-09-15-q',6],['2026-09-27-r',6],['2026-09-27-s',6]]) {
  const dir=path.join(base,'evidence',cohort);
  const audit=JSON.parse(fs.readFileSync(path.join(dir,'independent-audit.json')));
  const schedule=JSON.parse(fs.readFileSync(path.join(dir,'schedule.json')));
